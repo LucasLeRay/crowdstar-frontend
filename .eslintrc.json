@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": ["react-app", "airbnb"],
+  "plugins": ["react-hooks"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-negated-condition": 2,
+    "arrow-parens": "off",
+    "react/button-has-type": "off",
+    "object-curly-newline": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-wrap-multilines": "off",
+    "operator-linebreak": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-console": [
+      1,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "max-len": [2, 80],
+    "semi": [1, "never"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js"]
+      }
+    ],
+    "import/no-cycle": 0
+  }
+}
