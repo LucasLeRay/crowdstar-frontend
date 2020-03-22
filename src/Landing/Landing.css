@@ -1,0 +1,99 @@
+body {
+  background-color: #1da1f2;
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  height: 100px;
+  padding-top: 10px;
+}
+
+.content {
+  background-color: red;
+}
+
+footer {
+  background-color: #fff;
+  text-align: center;
+}
+
+#nav {
+  width: 100%;
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+  height: 90px;
+}
+
+#nav li {
+  float: right;
+}
+
+#nav li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: #fff;
+}
+
+.left {
+  margin: 0 0 0 100px;
+}
+
+#landing-title {
+  color: #fff;
+}
+
+#project-description {
+  margin: 0 100px 20px 0;
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  color: #1da1f2;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-description {
+  text-align: center;
+  width: 150px;
+}
+
+.white-bold {
+  color: #fff;
+  font-weight: bold;
+}
+
+.right {
+  text-align: center;
+}
+
+.crowdstar-demo {
+  margin: 50px 50px 10px 50px;
+  padding: 10px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.demo-description {
+  color: #88ffa3;
+  font-weight: bold;
+}
