@@ -1,5 +1,5 @@
 import React from 'react'
-import './Landing.css'
+import styles from './Landing.module.css'
 import MovingWave from '@bit/lucasleray.landing-stuff.moving-wave'
 
 function Landing() {
@@ -13,7 +13,7 @@ function Landing() {
         </ul>
       </header>
 
-      {/* <main> */}
+      <main>
       <div className="row">
         <div className="col left">
           <h1 id="landing-title">A Tweet board suited for your events.</h1>
@@ -24,21 +24,20 @@ function Landing() {
           </p>
           <div className="button-description">
             <button><a href="/configuration">Create a Board</a></button>
-
             <p className="white-bold">(It's free!)</p>
           </div>
         </div>
         <div className="col right">
-          <div className="crowdstar-demo">Demo</div>
+          <div className={styles.crowdstarDemo}>Demo</div>
           <div className="demo-description">
             x2.2 more visibility on average!
           </div>
         </div>
       </div>
-      {/* </main> */}
+      </main>
 
       <footer>
-        <MovingWave className="WaveWrapper" />
+        <MovingWave />
         Made with ❤️ by Lucas Le Ray & Guillaume Monot
       </footer>
     </div>

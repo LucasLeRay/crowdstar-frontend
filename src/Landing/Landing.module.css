@@ -8,10 +8,6 @@ header {
   padding-top: 10px;
 }
 
-.content {
-  background-color: red;
-}
-
 footer {
   text-align: center;
 }
@@ -88,7 +84,7 @@ button a {
   text-align: center;
 }
 
-.crowdstar-demo {
+.crowdstarDemo {
   margin: 50px 50px 10px 50px;
   padding: 10px;
   height: 300px;
