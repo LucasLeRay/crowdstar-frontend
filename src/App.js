@@ -1,31 +1,27 @@
 import React from 'react'
-import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-// Import components
-import Landing from './Landing/Landing'
-import Configuration from './Configuration/Configuration'
-import Feed from './Feed/Feed'
+import Landing from './Landing'
+import Configuration from './Configuration'
+import Feed from './Feed'
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Switch>
-          <Route path="/feed/:id">
-            <Feed />
-          </Route>
+    <Router>
+      <Switch>
+        <Route path="/feed/:id">
+          <Feed />
+        </Route>
 
-          <Route path="/configuration">
-            <Configuration />
-          </Route>
+        <Route path="/configuration">
+          <Configuration />
+        </Route>
 
-          <Route path="/">
-            <Landing />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+        <Route path="/">
+          <Landing />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
