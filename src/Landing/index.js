@@ -41,7 +41,9 @@ function Landing() {
           </p>
           <div className={ButtonWrapper}>
             <Link to="/configuration">
-              <Button title="Create a Board" />
+              <Button backgroundColor="#fff" textColor="#1da1f2">
+                Create a Board
+              </Button>
             </Link>
             <p>(It&#39;s free!)</p>
           </div>

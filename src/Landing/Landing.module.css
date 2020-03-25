@@ -1,12 +1,12 @@
 .Container {
   display: flex;
   flex-direction: column;
-  background-color: #1da1f2;
+  background-color: var(--primary-color);
   height: 100vh;
 }
 
 .Container footer svg {
-  margin-bottom: -50px;
+  margin-bottom: -30px;
 }
 
 .Copyright {

@@ -1,22 +1,52 @@
-import React from 'react'
-import { string, func } from 'prop-types'
-import { Container } from './Button.module.css'
+import React, { useState } from 'react'
+import { string, bool } from 'prop-types'
+import { Container, Loading } from './Button.module.css'
 
-function Button({ title, onClick }) {
+const classNames = array => array.filter(Boolean).join(' ')
+
+function Button({
+  children,
+  invertOnHover,
+  textColor,
+  backgroundColor,
+  className,
+  loading,
+  ...props
+}) {
+  const [hover, setHover] = useState(false)
   return (
-    <div className={Container}>
-      <button onClick={onClick}>{title}</button>
-    </div>
+    <button
+      className={classNames([className, Container])}
+      style={
+        hover && invertOnHover
+          ? { color: backgroundColor, backgroundColor: textColor }
+          : { color: textColor, backgroundColor }
+      }
+      {...props}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {loading ? <div className={Loading} /> : children}
+    </button>
   )
 }
 
 Button.propTypes = {
-  title: string.isRequired,
-  onClick: func,
+  children: string,
+  textColor: string,
+  backgroundColor: string,
+  className: string,
+  invertOnHover: bool,
+  loading: bool,
 }
 
 Button.defaultProps = {
-  onClick: () => {},
+  children: '',
+  textColor: '#fff',
+  backgroundColor: '#1da1f2',
+  className: '',
+  invertOnHover: false,
+  loading: false,
 }
 
 export default Button
