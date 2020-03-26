@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   max-height: 100vh;
   --primary-color: #1da1f2;
+  --text-color: #14171a;
+  --bg-color: #e1e8ed;
 }
 
 code {

@@ -75,7 +75,12 @@
   width: 300px;
   height: 80px;
   font-size: 36px;
-  margin-top: 30px;
+  margin-top: 40px;
+  transition: all 0.15s ease-in-out;
+}
+
+.ButtonWrapper button:hover {
+  transform: scale(1.1);
 }
 
 .ButtonWrapper p {
