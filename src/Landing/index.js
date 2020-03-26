@@ -40,7 +40,7 @@ function Landing() {
             gifts to encourage them!
           </p>
           <div className={ButtonWrapper}>
-            <Link to="/configuration">
+            <Link to="/new">
               <Button backgroundColor="#fff" textColor="#1da1f2">
                 Create a Board
               </Button>

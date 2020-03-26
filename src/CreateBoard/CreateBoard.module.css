@@ -1,0 +1,108 @@
+.Container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StepWrapper {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.StepContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.StepContainer h1 {
+  margin: 0;
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.StepBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 40px 40px 80px;
+}
+
+.StepBody h2 {
+  margin: 0;
+  font-size: 82px;
+  color: var(--text-color);
+}
+
+.HashtagWrapper {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 82px;
+  font-weight: 700;
+}
+
+.HashtagInput > input {
+  max-width: 600px;
+  height: 110px;
+  margin: 0 10px;
+  font-size: 82px;
+  font-weight: 700;
+}
+
+.ButtonWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ButtonWrapper button {
+  width: 240px;
+}
+
+.ColorInput {
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.ColorInput input {
+  margin-left: 5px;
+  height: 35px;
+  width: 35px;
+  border: none;
+}
+
+.UploadBannerWrapper {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.UploadBannerWrapper button {
+  width: 150px;
+  height: 52px;
+  margin-left: 10px;
+}
+
+.GivewayWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.GivewayWrapper span {
+  font-size: 42px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.GivewayWrapper input {
+}
