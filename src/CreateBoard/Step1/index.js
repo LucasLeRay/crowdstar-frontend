@@ -25,7 +25,8 @@ function Step1({ handleCancel, nextStep, hashtag, setHashtag }) {
             className={HashtagInput}
             value={hashtag}
             onChange={e => setHashtag(e.target.value)}
-            style={{ width: hashtag.length * 46 }}
+            placeholder="hashtag"
+            style={{ width: hashtag.length * 55 }}
           />
           <span>?</span>
         </span>

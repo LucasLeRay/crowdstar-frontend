@@ -50,12 +50,17 @@
   font-weight: 700;
 }
 
-.HashtagInput > input {
+.HashtagInput input {
   max-width: 600px;
-  height: 110px;
-  margin: 0 10px;
+  min-width: 350px;
   font-size: 82px;
+  height: 110px;
   font-weight: 700;
+}
+
+.HashtagInput {
+  margin: 0 10px;
+  height: 110px;
 }
 
 .ButtonWrapper {
@@ -95,14 +100,43 @@
 
 .GivewayWrapper {
   display: flex;
+  align-items: center;
   flex-direction: row;
+  margin-bottom: 40px;
 }
 
 .GivewayWrapper span {
   font-size: 42px;
   font-weight: 700;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
-.GivewayWrapper input {
+.GivewayOption {
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.GivewaySelect {
+  width: 120px;
+  margin: 0 20px;
+}
+
+.GivewayInput {
+  width: 65px;
+  margin-right: 20px;
+}
+
+.AskEmail {
+  font-size: 42px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+}
+
+.Email {
+  margin-top: 15px;
 }
