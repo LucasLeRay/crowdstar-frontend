@@ -68,8 +68,8 @@ function Step3({
         </div>
       </div>
       <div className={ButtonWrapper}>
-        <Button onClick={prevStep}>Previous</Button>
-        <Button onClick={onNextStep}>Next</Button>
+        <Button label="Previous" size="large" onClick={prevStep} />
+        <Button label="Next" size="large" onClick={onNextStep} />
       </div>
     </div>
   )

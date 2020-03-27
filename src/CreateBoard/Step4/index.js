@@ -25,8 +25,8 @@ function Step4({ prevStep, handleSubmit, email, setEmail }) {
         </div>
       </div>
       <div className={ButtonWrapper}>
-        <Button onClick={prevStep}>Previous</Button>
-        <Button onClick={handleSubmit}>Créer!!</Button>
+        <Button label="Previous" size="large" onClick={prevStep} />
+        <Button label="Create!" size="large" onClick={handleSubmit} />
       </div>
     </div>
   )

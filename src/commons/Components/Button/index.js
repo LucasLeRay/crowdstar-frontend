@@ -1,52 +1,46 @@
-import React, { useState } from 'react'
-import { string, bool } from 'prop-types'
-import { Container, Loading } from './Button.module.css'
+import React from 'react'
+import { string } from 'prop-types'
+import { Grommet, Button as GrommetButton } from 'grommet'
+import { Container } from './Button.module.css'
 
-const classNames = array => array.filter(Boolean).join(' ')
+const theme = {
+  global: {
+    colors: {
+      text: '#14171a',
+    },
+    active: {
+      background: {
+        color: '#fff',
+        opacity: 1,
+      },
+      color: '#1da1f2',
+    },
+  },
+  button: {
+    active: {
+      extend: {
+        fontWeight: '700',
+      },
+    },
+  },
+}
 
-function Button({
-  children,
-  invertOnHover,
-  textColor,
-  backgroundColor,
-  className,
-  loading,
-  ...props
-}) {
-  const [hover, setHover] = useState(false)
+function Button({ className, ...props }) {
   return (
-    <button
-      className={classNames([className, Container])}
-      style={
-        hover && invertOnHover
-          ? { color: backgroundColor, backgroundColor: textColor }
-          : { color: textColor, backgroundColor }
-      }
-      {...props}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      {loading ? <div className={Loading} /> : children}
-    </button>
+    <div className={`${className} ${Container}`}>
+      <Grommet theme={theme}>
+        <GrommetButton color="#1da1f2" {...props} />
+      </Grommet>
+    </div>
   )
 }
 
 Button.propTypes = {
-  children: string,
-  textColor: string,
-  backgroundColor: string,
   className: string,
-  invertOnHover: bool,
-  loading: bool,
 }
 
 Button.defaultProps = {
-  children: '',
-  textColor: '#fff',
-  backgroundColor: '#1da1f2',
   className: '',
-  invertOnHover: false,
-  loading: false,
 }
 
 export default Button

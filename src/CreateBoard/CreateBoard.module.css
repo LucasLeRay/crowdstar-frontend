@@ -70,6 +70,7 @@
 
 .ButtonWrapper button {
   width: 240px;
+  font-size: 28px;
 }
 
 .ColorInput {
