@@ -1,8 +1,8 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { Grommet, TextInput } from 'grommet'
+import { Grommet, Select as GrommetSelect } from 'grommet'
 
-import { Container } from './Input.module.css'
+import { Container } from './Select.module.css'
 
 const theme = {
   global: {
@@ -17,28 +17,37 @@ const theme = {
         color: '#1da1f2',
       },
     },
-    colors: {
-      placeholder: '#657786',
+    hover: {
+      background: '#e1e8ed',
     },
+    colors: {
+      selected: '#1da1f2',
+    },
+  },
+  select: {
+    icons: {
+      color: '#1da1f2',
+    },
+    background: '#e1e8ed',
   },
 }
 
-function Input({ className, ...props }) {
+function Select({ className, ...props }) {
   return (
     <div className={`${className} ${Container}`}>
       <Grommet theme={theme}>
-        <TextInput {...props} />
+        <GrommetSelect {...props} />
       </Grommet>
     </div>
   )
 }
 
-Input.propTypes = {
+Select.propTypes = {
   className: string,
 }
 
-Input.defaultProps = {
+Select.defaultProps = {
   className: '',
 }
 
-export default Input
+export default Select

@@ -9,12 +9,11 @@ import Step4 from './Step4'
 
 function CreateBoard({ history }) {
   const [step, setStep] = useState(0)
-  const [hashtag, setHashtag] = useState('hashtag')
+  const [hashtag, setHashtag] = useState('')
   const [color, setColor] = useState('#1da1f2')
   const [banner, setBanner] = useState('')
-  const [giveway, setGiveway] = useState('NONE')
-  const [winnerRate, setWinnerRate] = useState(0)
-  const [name, setName] = useState('')
+  const [giveway, setGiveway] = useState('every')
+  const [winnerRate, setWinnerRate] = useState(1)
   const [email, setEmail] = useState('')
 
   function handleCancel() {
@@ -58,10 +57,8 @@ function CreateBoard({ history }) {
         )}
         {step === 3 && (
           <Step4
-            nextStep={() => setStep(2)}
+            prevStep={() => setStep(2)}
             handleSubmit={handleSubmit}
-            name={name}
-            setName={setName}
             email={email}
             setEmail={setEmail}
           />
