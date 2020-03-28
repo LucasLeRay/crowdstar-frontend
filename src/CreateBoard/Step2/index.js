@@ -8,10 +8,15 @@ import {
   ColorInput,
 } from '../CreateBoard.module.css'
 import Button from '../../commons/Components/Button'
+import FileInput from '../../commons/Components/FileInput'
 
 function Step2({ prevStep, nextStep, color, setColor, banner, setBanner }) {
   function onNextStep() {
     nextStep()
+  }
+
+  async function uploadFile(file) {
+    console.log(file)
   }
 
   return (
@@ -30,7 +35,7 @@ function Step2({ prevStep, nextStep, color, setColor, banner, setBanner }) {
           </span>
           <div className={UploadBannerWrapper}>
             <span>Choose your banner:</span>
-            <Button>Upload</Button>
+            <FileInput onChange={e => uploadFile(e.target.files[0])} />
           </div>
         </div>
       </div>
