@@ -1,7 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { Grommet, Button as GrommetButton } from 'grommet'
-import { Container } from './Button.module.css'
 
 const theme = {
   global: {
@@ -27,7 +26,7 @@ const theme = {
 
 function Button({ className, ...props }) {
   return (
-    <div className={`${className} ${Container}`}>
+    <div className={className}>
       <Grommet theme={theme}>
         <GrommetButton color="#1da1f2" {...props} />
       </Grommet>

@@ -6,6 +6,7 @@ import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
 import Step4 from './Step4'
+import Step5 from './Step5'
 
 function CreateBoard({ history }) {
   const [step, setStep] = useState(0)
@@ -15,6 +16,7 @@ function CreateBoard({ history }) {
   const [giveway, setGiveway] = useState('every')
   const [winnerRate, setWinnerRate] = useState(1)
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
 
   function handleCancel() {
     history.push('/')
@@ -22,6 +24,7 @@ function CreateBoard({ history }) {
 
   function handleSubmit() {
     console.log('done')
+    setStep(4)
   }
 
   return (
@@ -63,6 +66,7 @@ function CreateBoard({ history }) {
             setEmail={setEmail}
           />
         )}
+        {step === 4 && <Step5 name={name} />}
       </div>
     </div>
   )

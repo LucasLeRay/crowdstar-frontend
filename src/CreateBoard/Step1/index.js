@@ -32,8 +32,18 @@ function Step1({ handleCancel, nextStep, hashtag, setHashtag }) {
         </span>
       </div>
       <div className={ButtonWrapper}>
-        <Button label="Cancel" size="large" onClick={handleCancel} />
-        <Button label="Next" size="large" onClick={onNextStep} />
+        <Button
+          colorBackground
+          label="Cancel"
+          size="large"
+          onClick={handleCancel}
+        />
+        <Button
+          colorBackground
+          label="Next"
+          size="large"
+          onClick={onNextStep}
+        />
       </div>
     </div>
   )
