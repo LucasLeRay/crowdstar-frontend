@@ -5,29 +5,46 @@ import {
   Container,
   GiftImage,
   Glass,
-  Total,
   Amount,
   Bulb,
   RedCircle,
   Filler,
 } from './style.module.css'
 
-function Thermometer() {
-  return (
+function Thermometer({ current, max, ...props }) {
+  
+    const styles = {
+        amount: {
+            height: `${current / max * 100}%`,
+        }
+    }
+
+    const filler = (current > 0) ? <div className={Filler}></div> : <div></div>
+
+
+    return (
     <div>
       <div className={Container}>
         <img className={GiftImage} src={img}></img>
         <span className={Glass}>
-          {/* <strong className={Total}>30%</strong> */}
-          <span className={Amount}></span>
+          <span className={Amount} style={styles.amount}></span>
         </span>
         <div className={Bulb}>
-          <span className={RedCircle}>1000</span>
-          <span className={Filler}></span>
+          <span className={RedCircle}>{current}</span>
+          {/* <div className={Filler}></div> */}
+            {filler}
         </div>
       </div>
     </div>
   )
 }
+
+Thermometer.propTypes = {
+    max: Number,
+  }
+  
+  Thermometer.defaultProps = {
+    current : '0',
+  }
 
 export default Thermometer
