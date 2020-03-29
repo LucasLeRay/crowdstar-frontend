@@ -1,5 +1,6 @@
 .Container {
   height: 100vh;
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +12,15 @@
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
+}
+
+.BannerWrapper {
+}
+
+.BannerWrapper img {
+  margin-top: -150px;
+  margin-bottom: 50px;
+  height: 150px;
 }
 
 .StepContainer {

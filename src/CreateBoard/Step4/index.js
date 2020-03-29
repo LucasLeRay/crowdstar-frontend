@@ -10,31 +10,51 @@ import {
 import Button from '../../commons/Components/Button'
 import Input from '../../commons/Components/Input'
 
-function Step4({ prevStep, handleSubmit, email, setEmail }) {
+function Step4({ prevStep, nextStep, email, setEmail }) {
+  function validInputs() {
+    return (
+      /^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\.([a-zA-Z]{2,5})$/.test(
+        email,
+      ) && email.length > 0
+    )
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    nextStep()
+  }
+
   return (
     <div className={StepContainer}>
-      <div className={StepBody}>
-        <div className={AskEmail}>
-          <span>Almost done!</span>
-          <span>What is your email address?</span>
-          <Input
-            className={Email}
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+      <form onSubmit={handleSubmit}>
+        <div className={StepBody}>
+          <div className={AskEmail}>
+            <span>Almost done!</span>
+            <span>What is your email address?</span>
+            <Input
+              className={Email}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className={ButtonWrapper}>
+          <Button label="Previous" size="large" onClick={prevStep} />
+          <Button
+            disabled={!validInputs()}
+            label="Create!"
+            size="large"
+            type="submit"
           />
         </div>
-      </div>
-      <div className={ButtonWrapper}>
-        <Button label="Previous" size="large" onClick={prevStep} />
-        <Button label="Create!" size="large" onClick={handleSubmit} />
-      </div>
+      </form>
     </div>
   )
 }
 
 Step4.propTypes = {
   prevStep: func.isRequired,
-  handleSubmit: func.isRequired,
+  nextStep: func.isRequired,
   email: string.isRequired,
   setEmail: func.isRequired,
 }
