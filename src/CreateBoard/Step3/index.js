@@ -25,52 +25,79 @@ function Step3({
   setWinnerRate,
 }) {
   const [isGiveway, setIsGiveway] = useState(false)
-  function onNextStep() {
+
+  function validInputs() {
+    if (isGiveway && winnerRate < 1) {
+      return false
+    }
+    return (
+      ['NONE', 'at', 'every'].includes(giveway) &&
+      !Number.isNaN(winnerRate) &&
+      winnerRate >= 0
+    )
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (isGiveway) {
+      setGiveway(giveway.toUpperCase())
+    } else {
+      setGiveway('NONE')
+      setWinnerRate(0)
+    }
     nextStep()
   }
 
   return (
     <div className={StepContainer}>
-      <div className={StepBody}>
-        <div>
-          <div className={GivewayWrapper}>
-            <span>Give gifts to your Tweeters?</span>
-            <CheckBox
-              checked={isGiveway}
-              onChange={e => setIsGiveway(e.target.checked)}
-            />
-          </div>
-          {isGiveway && (
-            <>
-              <div className={GivewayOption}>
-                <span>Give a gift</span>
-                <Select
-                  className={GivewaySelect}
-                  value={giveway}
-                  options={['every', 'at']}
-                />
-                <Input
-                  className={GivewayInput}
-                  value={winnerRate}
-                  onChange={e => setWinnerRate(e.target.value)}
-                />
-                <span>tweets</span>
-              </div>
-              <Range
-                value={winnerRate}
-                min={10}
-                max={1000}
-                step={10}
-                onChange={e => setWinnerRate(e.target.value)}
+      <form onSubmit={handleSubmit}>
+        <div className={StepBody}>
+          <div>
+            <div className={GivewayWrapper}>
+              <span>Give gifts to your Tweeters?</span>
+              <CheckBox
+                checked={isGiveway}
+                onChange={e => setIsGiveway(e.target.checked)}
               />
-            </>
-          )}
+            </div>
+            {isGiveway && (
+              <>
+                <div className={GivewayOption}>
+                  <span>Give a gift</span>
+                  <Select
+                    className={GivewaySelect}
+                    value={giveway}
+                    options={['every', 'at']}
+                  />
+                  <Input
+                    type="number"
+                    className={GivewayInput}
+                    value={winnerRate}
+                    onChange={e => setWinnerRate(Number(e.target.value))}
+                  />
+                  <span>tweets</span>
+                </div>
+                <Range
+                  value={winnerRate}
+                  min={10}
+                  max={1000}
+                  step={10}
+                  onChange={e => setWinnerRate(Number(e.target.value))}
+                />
+              </>
+            )}
+          </div>
         </div>
-      </div>
-      <div className={ButtonWrapper}>
-        <Button onClick={prevStep}>Previous</Button>
-        <Button onClick={onNextStep}>Next</Button>
-      </div>
+        <div className={ButtonWrapper}>
+          <Button label="Previous" size="large" onClick={prevStep} />
+          <Button
+            disabled={!validInputs()}
+            label="Next"
+            size="large"
+            type="submit"
+          />
+        </div>
+      </form>
     </div>
   )
 }

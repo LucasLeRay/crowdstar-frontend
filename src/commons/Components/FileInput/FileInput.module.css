@@ -1,0 +1,19 @@
+.Container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.Container button {
+  width: 150px;
+  height: 52px;
+}
+
+.Container input[type='file'] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
