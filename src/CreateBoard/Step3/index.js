@@ -70,9 +70,10 @@ function Step3({
                     options={['every', 'at']}
                   />
                   <Input
+                    type="number"
                     className={GivewayInput}
                     value={winnerRate}
-                    onChange={e => setWinnerRate(e.target.value)}
+                    onChange={e => setWinnerRate(Number(e.target.value))}
                   />
                   <span>tweets</span>
                 </div>
@@ -81,8 +82,7 @@ function Step3({
                   min={10}
                   max={1000}
                   step={10}
-                  onChange={e => setWinnerRate(e.target.value)}
-                  pattern
+                  onChange={e => setWinnerRate(Number(e.target.value))}
                 />
               </>
             )}

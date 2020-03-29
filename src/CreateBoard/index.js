@@ -33,9 +33,29 @@ function CreateBoard({ history }) {
     history.push('/')
   }
 
-  function handleSubmit() {
-    console.log('done')
-    setStep(4)
+  async function handleSubmit() {
+    try {
+      const res = await fetch('http://api.crowdstar.xyz/board', {
+        method: 'POST',
+        body: {
+          hashtag,
+          color,
+          banner,
+          name: 'test-1',
+          giveway,
+          winnerRate,
+          email,
+        },
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+      const board = await res.json()
+      setName(board.name)
+      setStep(4)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   return (

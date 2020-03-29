@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string, object } from 'prop-types'
+import { func, string } from 'prop-types'
 import {
   StepContainer,
   ButtonWrapper,
