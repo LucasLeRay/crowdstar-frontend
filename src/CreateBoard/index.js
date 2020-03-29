@@ -37,7 +37,11 @@ function CreateBoard({ history }) {
     try {
       const res = await fetch('http://api.crowdstar.xyz/board', {
         method: 'POST',
-        body: {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           hashtag,
           color,
           banner,
@@ -45,9 +49,6 @@ function CreateBoard({ history }) {
           giveway,
           winnerRate,
           email,
-        },
-        headers: new Headers({
-          'Content-Type': 'application/json',
         }),
       })
       const board = await res.json()
