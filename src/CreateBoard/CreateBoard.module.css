@@ -1,5 +1,6 @@
 .Container {
   height: 100vh;
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +12,15 @@
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
+}
+
+.BannerWrapper {
+}
+
+.BannerWrapper img {
+  margin-top: -150px;
+  margin-bottom: 50px;
+  height: 150px;
 }
 
 .StepContainer {
@@ -70,6 +80,7 @@
 
 .ButtonWrapper button {
   width: 240px;
+  font-size: 28px;
 }
 
 .ColorInput {
@@ -90,12 +101,7 @@
 .UploadBannerWrapper {
   font-size: 42px;
   font-weight: 700;
-}
-
-.UploadBannerWrapper button {
-  width: 150px;
-  height: 52px;
-  margin-left: 10px;
+  display: flex;
 }
 
 .GivewayWrapper {
@@ -139,4 +145,34 @@
 
 .Email {
   margin-top: 15px;
+}
+
+.ConfirmationWrapper {
+  width: 1000px;
+}
+
+.Congrats {
+  font-size: 54px;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.Details span:first-child {
+  margin-bottom: 10px;
+}
+
+.GoBoard button {
+  width: 300px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
 }
