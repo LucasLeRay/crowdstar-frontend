@@ -1,5 +1,5 @@
 async function apiRequest(body, method, route) {
-  const res = await fetch(`http://api.crowdstar.xyz/${route}`, {
+  const res = await fetch(`https://api.crowdstar.xyz/${route}`, {
     method,
     headers: {
       Accept: 'application/json',
