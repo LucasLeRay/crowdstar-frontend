@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { shape, func } from 'prop-types'
 import { withRouter } from 'react-router-dom'
+import apiRequest from '../commons/helpers/apiRequest.js'
 import { Container, StepWrapper, BannerWrapper } from './CreateBoard.module.css'
 import Step1 from './Step1'
 import Step2 from './Step2'
@@ -35,9 +36,8 @@ function CreateBoard({ history }) {
 
   async function handleSubmit() {
     try {
-      const res = await fetch('http://api.crowdstar.xyz/board', {
-        method: 'POST',
-        body: {
+      const board = await apiRequest(
+        {
           hashtag,
           color,
           banner,
@@ -46,11 +46,9 @@ function CreateBoard({ history }) {
           winnerRate,
           email,
         },
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      })
-      const board = await res.json()
+        'POST',
+        'board',
+      )
       setName(board.name)
       setStep(4)
     } catch (err) {
