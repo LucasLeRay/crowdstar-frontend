@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Landing from './Landing'
 import CreateBoard from './CreateBoard'
+import Feed from './Feed'
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
       <Switch>
         <Route path="/new">
           <CreateBoard />
+        </Route>
+
+        <Route path="/feed/:id">
+          <Feed />
         </Route>
 
         <Route path="/">
