@@ -13,7 +13,7 @@ function App() {
           <CreateBoard />
         </Route>
 
-        <Route path="/feed/:id">
+        <Route path="/feed/:room">
           <Feed />
         </Route>
 
