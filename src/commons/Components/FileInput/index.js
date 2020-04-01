@@ -7,7 +7,12 @@ function FileInput(props) {
   return (
     <div className={Container}>
       <Button label="Upload" icon={<Upload size="medium" color="#14171a" />} />
-      <input id="file-upload" type="file" {...props} />
+      <input
+        id="file-upload"
+        type="file"
+        accept="image/x-png,image/gif,image/jpeg"
+        {...props}
+      />
     </div>
   )
 }
