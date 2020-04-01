@@ -13,7 +13,7 @@ function CreateBoard({ history }) {
   const [step, setStep] = useState(0)
   const [hashtag, setHashtag] = useState('')
   const [color, setColor] = useState('#1da1f2')
-  const [banner, setBanner] = useState(undefined)
+  const [banner, setBanner] = useState()
   const [giveway, setGiveway] = useState('every')
   const [winnerRate, setWinnerRate] = useState(1)
   const [email, setEmail] = useState('')
@@ -40,8 +40,7 @@ function CreateBoard({ history }) {
         {
           hashtag,
           color,
-          banner,
-          name: 'test-1',
+          banner: imgBanner,
           giveway,
           winnerRate,
           email,
