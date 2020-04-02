@@ -1,6 +1,7 @@
 .Container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   background-color: var(--primary-color);
 }
 
@@ -43,11 +44,10 @@
 }
 
 .LeftPart {
-  margin: 0 2vh 0 7vh;
+  margin: 0 20px;
 }
 
 .RightPart {
-  margin: 0 7vh 0 2vh;
   text-align: center;
 }
 
@@ -59,7 +59,6 @@
 
 .LeftPart p {
   width: 600px;
-  margin: 0;
   font-size: 22px;
   line-height: 30px;
   color: #fff;
@@ -118,7 +117,7 @@
   font-size: 28px;
 }
 
-@media only screen and (max-width: 1400px) {
+@media (max-width: 1400px) {
   .LeftPart h1 {
     margin: 0 0 28px 0;
     font-size: 38px;
@@ -132,12 +131,7 @@
     color: #fff;
   }
 
-  .LeftPart {
-    margin: 0 1vh 0 4vh;
-  }
-
   .RightPart {
-    margin: 0 4vh 0 1vh;
     text-align: center;
   }
 
@@ -148,7 +142,7 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .Container {
     display: flex;
     flex-direction: column;
@@ -158,28 +152,26 @@
   .Container > div {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: center;
   }
 
   .LeftPart {
-    margin-top: 40px;
     text-align: center;
   }
 
   .LeftPart p {
     width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 
   .RightPart {
-    margin: 0 auto; 
+    margin: 50px auto 0;
     text-align: center;
   }
 
   .ButtonWrapper {
     width: 100%;
     margin-top: 40px;
-    margin-bottom: 2vh;
   }
 
   .Demo,
@@ -189,7 +181,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .Demo,
   .Demo img {
     width: 400px;
@@ -197,7 +189,24 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
+  .LeftPart h1 {
+    font-size: 32px;
+  }
+
+  .LeftPart p {
+    font-size: 18px;
+  }
+
+  .ButtonWrapper button {
+    font-size: 32px;
+  }
+
+  .RightPart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   .Demo,
   .Demo img {
     width: 350px;

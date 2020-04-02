@@ -15,7 +15,12 @@ function Step5({ name }) {
   return (
     <div className={StepContainer}>
       <div className={StepBody}>
-        <span className={Congrats}>Congrats! 🎉🎉🎉</span>
+        <span className={Congrats}>
+          Congrats!
+          <span role="img" aria-label="heart">
+            {' 🎉🎉🎉'}
+          </span>
+        </span>
         <div className={Details}>
           <span>Your board is setup!</span>
           <span>
