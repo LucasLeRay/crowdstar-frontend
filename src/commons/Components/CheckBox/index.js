@@ -15,6 +15,13 @@ const theme = {
     color: '#1da1f2',
     size: '32px',
   },
+  global: {
+    focus: {
+      border: {
+        color: '#1da1f2',
+      },
+    },
+  },
 }
 
 function CheckBox({ className, ...props }) {

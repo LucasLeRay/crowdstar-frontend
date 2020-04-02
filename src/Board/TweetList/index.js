@@ -31,10 +31,10 @@ TweetList.propTypes = {
       screenName: string.isRequired,
       content: string.isRequired,
       id: string.isRequired,
-      color: string.isRequired,
       media: string,
     }),
   ).isRequired,
+  color: string.isRequired,
   hashtag: string.isRequired,
 }
 

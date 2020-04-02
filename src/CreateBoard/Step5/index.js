@@ -24,8 +24,7 @@ function Step5({ name }) {
         <div className={Details}>
           <span>Your board is setup!</span>
           <span>
-            You will now receive an email with the id of your board and the code
-            to update it!
+            You will now receive an email with the id to access to your board.
           </span>
         </div>
       </div>

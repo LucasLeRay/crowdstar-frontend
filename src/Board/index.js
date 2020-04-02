@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import io from 'socket.io-client'
+import { PulseLoader } from 'react-spinners'
 
 import apiRequest from '../commons/helpers/apiRequest'
 import Thermometer from './Thermometer'
 import TweetList from './TweetList'
-import { Container, BannerWrapper, BoardWrapper } from './Board.module.css'
+import {
+  Container,
+  BannerWrapper,
+  BoardWrapper,
+  LoadingWrapper,
+} from './Board.module.css'
 
 async function getBoardInformation(name) {
   try {
@@ -61,7 +67,9 @@ function Feed() {
       </div>
     </div>
   ) : (
-    <div>loading</div>
+    <div className={LoadingWrapper}>
+      <PulseLoader size={30} margin={10} color="#1da1f2" />
+    </div>
   )
 }
 

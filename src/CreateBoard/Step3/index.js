@@ -57,7 +57,12 @@ function Step3({
               <span>Give gifts to your Tweeters?</span>
               <CheckBox
                 checked={isGiveway}
-                onChange={e => setIsGiveway(e.target.checked)}
+                onChange={e => {
+                  if (e.target.checked) {
+                    setGiveway('every')
+                  }
+                  setIsGiveway(e.target.checked)
+                }}
               />
             </div>
             {isGiveway && (
