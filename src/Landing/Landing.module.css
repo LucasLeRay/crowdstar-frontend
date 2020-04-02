@@ -168,11 +168,11 @@
 
   .LeftPart p {
     width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 
   .RightPart {
-    margin: 0 auto; 
+    margin: 0 auto;
     text-align: center;
   }
 
@@ -186,6 +186,23 @@
   .Demo img {
     width: 495px;
     height: 250px;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .ButtonWrapper {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 2vh;
+  }
+
+  .LeftPart h1 {
+    margin: 0 0 60px 0;
+  }
+
+  .RightPart {
+      margin-top: 50px;
+    margin-bottom: 60px;
   }
 }
 
