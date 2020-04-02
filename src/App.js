@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Landing from './Landing'
 import CreateBoard from './CreateBoard'
-import Feed from './Feed'
+import Board from './Board'
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
           <CreateBoard />
         </Route>
 
-        <Route path="/board/:room">
-          <Feed />
+        <Route path="/board/:name">
+          <Board />
         </Route>
 
         <Route path="/">
