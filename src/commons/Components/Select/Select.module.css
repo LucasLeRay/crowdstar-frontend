@@ -1,3 +1,7 @@
 .Container {
   border-radius: 10px;
 }
+
+.Container button > div {
+  border-radius: 10px;
+}
