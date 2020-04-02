@@ -4,6 +4,7 @@ import io from 'socket.io-client'
 
 import apiRequest from '../commons/helpers/apiRequest'
 import Thermometer from '../commons/Components/Thermometer'
+import TweetList from './TweetList'
 
 async function getRoomInformation(room) {
   try {
@@ -17,6 +18,9 @@ async function getRoomInformation(room) {
 function Feed() {
   const { room } = useParams()
   const [board, setBoard] = useState(null)
+  const [tweets, setTweets] = useState([])
+  const [counter, setCounter] = useState([])
+
   useEffect(() => {
     let result
     const socket = io('https://api.crowdstar.xyz')
@@ -27,12 +31,14 @@ function Feed() {
         name: result.name,
         hashtag: result.hashtag,
       })
-      socket.on('tweet', tweet => console.log(tweet))
+      socket.on('tweet', data => {
+        setTweets(state => [data.tweet, ...state.slice(0, 9)])
+        setCounter(data.counter)
+      })
       setBoard(result)
     }
     fetchData()
     return () => {
-      console.log('unregister')
       socket.emit('unregister', result.name)
     }
   }, [])
@@ -41,6 +47,7 @@ function Feed() {
     <div>
       <Thermometer current="60" max="1000" />
       <Link to="/">lol</Link>
+      <TweetList tweets={tweets} />
       {board && board.name}
     </div>
   )
