@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color);
-  height: 100vh;
 }
 
 .Container footer svg {
@@ -44,11 +43,11 @@
 }
 
 .LeftPart {
-  margin: 0 0 0 150px;
+  margin: 0 2vh 0 7vh;
 }
 
 .RightPart {
-  margin: 0 150px 0 0;
+  margin: 0 7vh 0 2vh;
   text-align: center;
 }
 
@@ -117,4 +116,91 @@
   font-weight: bold;
   margin-top: 10px;
   font-size: 28px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .LeftPart h1 {
+    margin: 0 0 28px 0;
+    font-size: 38px;
+    color: #fff;
+  }
+
+  .LeftPart p {
+    width: 90%;
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+  }
+
+  .LeftPart {
+    margin: 0 1vh 0 4vh;
+  }
+
+  .RightPart {
+    margin: 0 4vh 0 1vh;
+    text-align: center;
+  }
+
+  .Demo,
+  .Demo img {
+    width: 495px;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+  }
+
+  .Container > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .LeftPart {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .LeftPart p {
+    width: 90%;
+    margin: 0 auto; 
+  }
+
+  .RightPart {
+    margin: 0 auto; 
+    text-align: center;
+  }
+
+  .ButtonWrapper {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 2vh;
+  }
+
+  .Demo,
+  .Demo img {
+    width: 495px;
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Demo,
+  .Demo img {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Demo,
+  .Demo img {
+    width: 350px;
+    height: 197px;
+  }
 }
