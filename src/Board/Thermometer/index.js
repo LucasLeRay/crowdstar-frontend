@@ -23,7 +23,7 @@ function Thermometer({ current, max, ...props }) {
   return (
     <div>
       <div className={Container}>
-        <img className={GiftImage} src={img} />
+        <img className={GiftImage} src={img} alt="gift" />
         <span className={Glass}>
           <span className={Amount} style={styles.amount} />
         </span>

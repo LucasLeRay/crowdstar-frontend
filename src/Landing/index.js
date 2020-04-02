@@ -30,11 +30,8 @@ function Landing() {
 
       <div className={Body}>
         <div className={LeftPart}>
-          <h1>A Tweet board suited for your events.</h1>
-          <p>
-            With CrowdStar you can show the world the last tweets speaking of
-            your awesome event!
-          </p>
+          <h1>The Tweet Board that makes you famous.</h1>
+          <p>Show the world the last tweets speaking of your awesome event!</p>
           <p>
             Customize the board with your design and reward your Tweeters with
             gifts to encourage them!
@@ -59,7 +56,11 @@ function Landing() {
       <footer>
         <MovingWave />
         <div className={Copyright}>
-          Made with ❤️ by Lucas Le Ray & Guillaume Monot
+          Made with
+          <span role="img" aria-label="heart">
+            {' ❤️ '}
+          </span>
+          by Lucas Le Ray & Guillaume Monot
         </div>
       </footer>
     </div>
