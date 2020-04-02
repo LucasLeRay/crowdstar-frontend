@@ -12,27 +12,25 @@ import {
 } from './style.module.css'
 
 function Thermometer({ current, max, ...props }) {
-  
-    const styles = {
-        amount: {
-            height: `${current / max * 100}%`,
-        }
-    }
+  const styles = {
+    amount: {
+      height: `${(current / max) * 100}%`,
+    },
+  }
 
-    const filler = (current > 0) ? <div className={Filler}></div> : <div></div>
+  const filler = current > 0 ? <div className={Filler} /> : <div />
 
-
-    return (
+  return (
     <div>
       <div className={Container}>
-        <img className={GiftImage} src={img}></img>
+        <img className={GiftImage} src={img} />
         <span className={Glass}>
-          <span className={Amount} style={styles.amount}></span>
+          <span className={Amount} style={styles.amount} />
         </span>
         <div className={Bulb}>
           <span className={RedCircle}>{current}</span>
           {/* <div className={Filler}></div> */}
-            {filler}
+          {filler}
         </div>
       </div>
     </div>
@@ -40,11 +38,11 @@ function Thermometer({ current, max, ...props }) {
 }
 
 Thermometer.propTypes = {
-    max: Number,
-  }
-  
-  Thermometer.defaultProps = {
-    current : '0',
-  }
+  max: Number,
+}
+
+Thermometer.defaultProps = {
+  current: '0',
+}
 
 export default Thermometer
