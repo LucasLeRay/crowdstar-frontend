@@ -14,6 +14,11 @@ const theme = {
       },
       color: '#1da1f2',
     },
+    focus: {
+      border: {
+        color: '#1da1f2',
+      },
+    },
   },
   button: {
     active: {
