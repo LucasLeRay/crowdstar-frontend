@@ -36,6 +36,10 @@
   color: #fff;
 }
 
+.Header li a:hover {
+  cursor: pointer;
+}
+
 .Body {
   display: flex;
   align-items: center;
@@ -117,6 +121,36 @@
   font-size: 28px;
 }
 
+.ModalStyle {
+  position: absolute;
+  padding: 40px;
+  top: 200px;
+  left: 200px;
+  right: 200px;
+  bottom: 200px;
+
+  height: 250px;
+  background-color: #fff;
+}
+
+.RoomInput input {
+  min-width: 350px;
+  font-size: 82px;
+  height: 110px;
+  font-weight: 700;
+}
+
+.RoomInput {
+  margin: 0 10px;
+  height: 110px;
+}
+
+.ModalButton {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (max-width: 1400px) {
   .LeftPart h1 {
     margin: 0 0 28px 0;
@@ -181,11 +215,54 @@
   }
 }
 
+@media (max-width: 900px) {
+  .ModalStyle {
+    left: 100px;
+    right: 100px;
+  }
+
+  .RoomInput input {
+    min-width: 350px;
+    font-size: 60px;
+    height: 110px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 650px) {
+  .ModalStyle {
+    left: 50px;
+    right: 50px;
+  }
+
+  .RoomInput input {
+    min-width: 350px;
+    font-size: 35px;
+    height: 110px;
+    font-weight: 700;
+  }
+}
+
 @media (max-width: 600px) {
   .Demo,
   .Demo img {
     width: 400px;
     height: 225px;
+  }
+}
+
+@media (max-width: 500px) {
+  .ModalStyle {
+    padding: 20px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .RoomInput input { 
+    min-width: 300px;
+    font-size: 35px;
+    height: 110px;
+    font-weight: 700;
   }
 }
 

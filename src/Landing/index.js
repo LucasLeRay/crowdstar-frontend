@@ -2,9 +2,14 @@ import React from 'react'
 import MovingWave from '@bit/lucasleray.landing-stuff.moving-wave'
 import { Link } from 'react-router-dom'
 
+import Modal from 'react-modal'
+
 import useWindowDimensions from '../commons/hooks/useWindowDimensions'
 import feedDemo from './feedDemo.png'
 import Button from '../commons/Components/Button'
+
+import Input from '../commons/Components/Input'
+
 import {
   Container,
   Header,
@@ -15,22 +20,76 @@ import {
   Demo,
   DemoDescription,
   Copyright,
+  ModalStyle,
+  RoomInput,
+  ModalButton,
 } from './Landing.module.css'
 
 function Landing() {
+  Modal.setAppElement('#root')
   const { width } = useWindowDimensions()
 
+  const [modalIsOpen, setIsOpen] = React.useState(false)
+  const [room, setRoom] = React.useState('')
+
+  const openModal = () => {
+    setIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+
+  const debug = () => {
+    console.log('room ', room)
+  }
   return (
     <div className={Container}>
       {width > 1000 && (
         <header className={Header}>
           <ul>
             <li>
-              <Link to="/configuration">Join a Board</Link>
+              <a onClick={openModal}>Join a Board</a>
             </li>
           </ul>
         </header>
       )}
+
+      <div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          className={ModalStyle}
+          contentLabel="Example Modal"
+        >
+          <h1>Choose your room</h1>
+
+          <Input
+            className={RoomInput}
+            placeholder="crowdstar-0403"
+            value={room}
+            onChange={e => setRoom(e.target.value)}
+          />
+
+          <div className={ModalButton}>
+            <Button
+              colorBackground
+              label="Close"
+              size="large"
+              onClick={closeModal}
+            />
+            <Link to={`/board/${room}`}>
+              <Button
+                colorBackground
+                label="Go "
+                size="large"
+                onClick={debug}
+                disabled={!(room.length > 5)}
+              />
+            </Link>
+          </div>
+        </Modal>
+      </div>
 
       <div className={Body}>
         <div className={LeftPart}>
