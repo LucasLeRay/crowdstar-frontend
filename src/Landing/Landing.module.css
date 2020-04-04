@@ -27,7 +27,7 @@
   float: right;
 }
 
-.Header li a {
+.Header li span {
   display: block;
   padding: 16px 16px;
   text-decoration: none;
@@ -36,7 +36,7 @@
   color: #fff;
 }
 
-.Header li a:hover {
+.Header li span:hover {
   cursor: pointer;
 }
 
