@@ -4,14 +4,16 @@ import io from 'socket.io-client'
 import { PulseLoader } from 'react-spinners'
 
 import apiRequest from '../commons/helpers/apiRequest'
-import Thermometer from './Thermometer'
+import Counter from './Counter'
 import TweetList from './TweetList'
 import {
   Container,
   BannerWrapper,
   BoardWrapper,
   LoadingWrapper,
+  WinnerWrapper,
 } from './Board.module.css'
+import Tweet from './TweetList/Tweet'
 
 async function getBoardInformation(name) {
   try {
@@ -22,11 +24,12 @@ async function getBoardInformation(name) {
   }
 }
 
-function Feed() {
+function Board() {
   const { name } = useParams()
   const [board, setBoard] = useState(null)
   const [tweets, setTweets] = useState([])
-  const [counter, setCounter] = useState([])
+  const [counter, setCounter] = useState(0)
+  const [winner, setWinner] = useState(null)
 
   useEffect(() => {
     let result
@@ -37,10 +40,18 @@ function Feed() {
       socket.emit('register', {
         name: result.name,
         hashtag: result.hashtag,
+        winnerRate: result.winnerRate,
+        giveway: result.giveway,
       })
-      socket.on('tweet', data => {
-        setTweets(state => [data.tweet, ...state.slice(0, 9)])
+      socket.on('tweet', (data) => {
+        setTweets((state) => [data.tweet, ...state.slice(0, 9)])
         setCounter(data.counter)
+      })
+      socket.on('winner', (data) => {
+        setWinner(data)
+        setTimeout(() => {
+          setWinner(null)
+        }, 5000)
       })
       setBoard(result)
     }
@@ -56,14 +67,34 @@ function Feed() {
         </div>
       )}
       <div className={BoardWrapper}>
-        {['every', 'at'].includes(board.giveway) && (
-          <Thermometer current="60" max="1000" />
+        {['EVERY', 'AT'].includes(board.giveway) && (
+          <Counter
+            current={counter}
+            rate={board.winnerRate}
+            repeat={board.giveway === 'EVERY'}
+          />
         )}
-        <TweetList
-          tweets={tweets}
-          hashtag={board.hashtag}
-          color={board.color}
-        />
+        {winner ? (
+          <div className={WinnerWrapper}>
+            <span>{`Congrats ${winner.screenName}, You won a gift! 🎉🎉🎉`}</span>
+            <Tweet
+              profilePicture={winner.profilePicture}
+              userName={winner.userName}
+              screenName={winner.screenName}
+              content={winner.content}
+              hashtag={board.hashtag}
+              media={winner.media}
+              key={winner.id}
+              color={board.color}
+            />
+          </div>
+        ) : (
+          <TweetList
+            tweets={tweets}
+            hashtag={board.hashtag}
+            color={board.color}
+          />
+        )}
       </div>
     </div>
   ) : (
@@ -73,4 +104,4 @@ function Feed() {
   )
 }
 
-export default Feed
+export default Board
