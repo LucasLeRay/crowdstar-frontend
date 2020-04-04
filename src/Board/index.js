@@ -12,6 +12,7 @@ import {
   BoardWrapper,
   LoadingWrapper,
   WinnerWrapper,
+  ReduceCounter,
 } from './Board.module.css'
 import Tweet from './TweetList/Tweet'
 
@@ -51,7 +52,7 @@ function Board() {
         setWinner(data)
         setTimeout(() => {
           setWinner(null)
-        }, 5000)
+        }, 80000)
       })
       setBoard(result)
     }
@@ -69,6 +70,7 @@ function Board() {
       <div className={BoardWrapper}>
         {['EVERY', 'AT'].includes(board.giveway) && (
           <Counter
+            className={board.banner ? ReduceCounter : ''}
             current={counter}
             rate={board.winnerRate}
             repeat={board.giveway === 'EVERY'}

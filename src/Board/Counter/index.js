@@ -1,5 +1,5 @@
 import React from 'react'
-import { number, bool } from 'prop-types'
+import { number, bool, string } from 'prop-types'
 
 import { ReactComponent as Gift } from './gift.svg'
 import {
@@ -12,7 +12,7 @@ import {
   Filler,
 } from './Counter.module.css'
 
-function Counter({ current, rate, repeat }) {
+function Counter({ current, rate, repeat, className }) {
   const prev = repeat ? current - (current % rate) : 0
   const styles = {
     amount: {
@@ -23,7 +23,7 @@ function Counter({ current, rate, repeat }) {
 
   return (
     <div>
-      <div className={Container}>
+      <div className={`${Container} ${className}`}>
         <Gift className={GiftImage} alt="gift" />
         <span className={Glass}>
           <span className={Amount} style={styles.amount} />
@@ -41,6 +41,11 @@ Counter.propTypes = {
   current: number.isRequired,
   rate: number.isRequired,
   repeat: bool.isRequired,
+  className: string,
+}
+
+Counter.defaultProps = {
+  className: '',
 }
 
 export default Counter
