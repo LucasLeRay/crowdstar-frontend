@@ -137,6 +137,10 @@
   margin-right: 20px;
 }
 
+.GiveawayGiftInput {
+    display: flex;
+}
+
 .AskEmail {
   font-size: 42px;
   font-weight: 700;
@@ -155,13 +159,13 @@
 .Congrats {
   font-size: 54px;
   font-weight: 700;
-  width: 100%;
   margin-bottom: 50px;
 }
 
 .Details {
   display: flex;
   flex-direction: column;
+  text-align: center;
   width: 100%;
   font-size: 28px;
   font-weight: 700;
@@ -182,4 +186,192 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .StepWrapper {
+    width: 70%;
+    max-width: unset;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  .HashtagWrapper {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 700;
+  }
+
+  .StepBody h2 {
+    margin: 0;
+    font-size: 70px;
+    color: var(--text-color);
+  }
+
+  .HashtagInput input {
+    max-width: 350px;
+    min-width: 350px;
+    font-size: 70px;
+    height: 110px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 710px) {
+  .StepWrapper {
+    width: 70%;
+    max-width: unset;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  .HashtagWrapper {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .StepBody h2 {
+    margin: 0;
+    width: 400px;
+    font-size: 50px;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .HashtagInput input {
+    max-width: 350px;
+    min-width: 350px;
+    font-size: 40px;
+    height: 110px;
+    font-weight: 700;
+  }
+
+  .ColorInput {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .UploadBannerWrapper {
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+  }
+
+  .GivewayWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .GivewayWrapper span {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .GivewayOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .GivewaySelect {
+    width: 120px;
+    margin: 0 20px;
+  }
+
+  .GivewayInput {
+    width: 65px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .HashtagWrapper {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .HashtagInput input {
+    max-width: 250px;
+    min-width: 250px;
+    font-size: 50px;
+    height: 110px;
+    font-weight: 700;
+  }
+
+  .StepBody h2 {
+    width: 100%;
+  }
+
+  .ButtonWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ButtonWrapper button {
+    margin-top: 10px;
+  }
+
+  .ColorInput {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .UploadBannerWrapper {
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .ColorInput {
+    flex-direction: column;
+  }
+
+  .AskEmail {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .GoBoard button {
+    width: unset;
+    }
+}
+
+@media (max-width: 400px) {
+  .ColorInput {
+    width: 300px;
+    font-size: 25px;
+  }
+
+  .UploadBannerWrapper {
+    font-size: 25px;
+    width: 300px;
+  }
 }
