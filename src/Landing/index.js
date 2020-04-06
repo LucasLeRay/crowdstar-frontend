@@ -40,16 +40,13 @@ function Landing() {
     setIsOpen(false)
   }
 
-  const debug = () => {
-    console.log('room ', room)
-  }
   return (
     <div className={Container}>
       {width > 1000 && (
         <header className={Header}>
           <ul>
             <li>
-              <a onClick={openModal}>Join a Board</a>
+              <span onClick={openModal}>Join a Board</span>
             </li>
           </ul>
         </header>
@@ -83,7 +80,6 @@ function Landing() {
                 colorBackground
                 label="Go "
                 size="large"
-                onClick={debug}
                 disabled={!(room.length > 5)}
               />
             </Link>
