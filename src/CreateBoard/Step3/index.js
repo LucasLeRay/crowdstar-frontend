@@ -9,6 +9,7 @@ import {
   GivewayOption,
   GivewaySelect,
   GivewayInput,
+  GiveawayGiftInput,
 } from '../CreateBoard.module.css'
 import Button from '../../commons/Components/Button'
 import Input from '../../commons/Components/Input'
@@ -57,7 +58,7 @@ function Step3({
               <span>Give gifts to your Tweeters?</span>
               <CheckBox
                 checked={isGiveway}
-                onChange={e => {
+                onChange={(e) => {
                   if (e.target.checked) {
                     setGiveway('every')
                   }
@@ -69,17 +70,19 @@ function Step3({
               <>
                 <div className={GivewayOption}>
                   <span>Give a gift</span>
-                  <Select
-                    className={GivewaySelect}
-                    value={giveway}
-                    options={['every', 'at']}
-                  />
-                  <Input
-                    type="number"
-                    className={GivewayInput}
-                    value={winnerRate}
-                    onChange={e => setWinnerRate(Number(e.target.value))}
-                  />
+                  <div className={GiveawayGiftInput}>
+                    <Select
+                      className={GivewaySelect}
+                      value={giveway}
+                      options={['every', 'at']}
+                    />
+                    <Input
+                      type="number"
+                      className={GivewayInput}
+                      value={winnerRate}
+                      onChange={(e) => setWinnerRate(Number(e.target.value))}
+                    />
+                  </div>
                   <span>tweets</span>
                 </div>
                 <Range
@@ -87,7 +90,7 @@ function Step3({
                   min={10}
                   max={1000}
                   step={10}
-                  onChange={e => setWinnerRate(Number(e.target.value))}
+                  onChange={(e) => setWinnerRate(Number(e.target.value))}
                 />
               </>
             )}
