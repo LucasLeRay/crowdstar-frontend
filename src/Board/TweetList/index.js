@@ -1,13 +1,14 @@
 import React from 'react'
-import { arrayOf, shape, string } from 'prop-types'
+import { arrayOf, shape, string, bool } from 'prop-types'
 
 import Tweet from './Tweet'
-import { Container } from './TweetList.module.css'
+import { Container, Placeholder, MarginGiveway } from './TweetList.module.css'
+import { ReactComponent as MobileMessages } from './mobileMessages.svg'
 
-function TweetList({ tweets, hashtag, color }) {
-  return (
+function TweetList({ tweets, hashtag, color, isGiveway }) {
+  return tweets.length ? (
     <div className={Container}>
-      {tweets.map(tweet => (
+      {tweets.map((tweet) => (
         <Tweet
           profilePicture={tweet.profilePicture}
           userName={tweet.userName}
@@ -19,6 +20,13 @@ function TweetList({ tweets, hashtag, color }) {
           color={color}
         />
       ))}
+    </div>
+  ) : (
+    <div className={`${Placeholder} ${isGiveway && MarginGiveway}`}>
+      <span>Be the first to tweet with</span>
+      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+      <b>#{hashtag}</b>
+      <MobileMessages fill={color} />
     </div>
   )
 }
@@ -36,6 +44,11 @@ TweetList.propTypes = {
   ).isRequired,
   color: string.isRequired,
   hashtag: string.isRequired,
+  isGiveway: bool,
+}
+
+TweetList.defaultProps = {
+  isGiveway: false,
 }
 
 export default TweetList

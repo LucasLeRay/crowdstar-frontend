@@ -52,7 +52,7 @@ function Board() {
         setWinner(data)
         setTimeout(() => {
           setWinner(null)
-        }, 80000)
+        }, 8000)
       })
       setBoard(result)
     }
@@ -95,6 +95,7 @@ function Board() {
             tweets={tweets}
             hashtag={board.hashtag}
             color={board.color}
+            isGiveway={board.giveway !== 'NONE'}
           />
         )}
       </div>
