@@ -49,5 +49,5 @@
 }
 
 .ReduceCounter {
-  height: calc(100% - 180px);
+  max-height: calc(100% - 180px);
 }
