@@ -151,6 +151,12 @@
   justify-content: space-around;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black
+}
+
 @media (max-width: 1400px) {
   .LeftPart h1 {
     margin: 0 0 28px 0;
@@ -258,7 +264,7 @@
     right: 10px;
   }
 
-  .RoomInput input { 
+  .RoomInput input {
     min-width: 300px;
     font-size: 35px;
     height: 110px;
