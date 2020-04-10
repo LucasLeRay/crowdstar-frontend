@@ -121,11 +121,11 @@ function Landing() {
               {' ❤️ '}
             </span>
             by{' '}
-            <a href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/">
+            <a target="_blank" href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/">
               Lucas Le Ray
             </a>{' '}
             &{' '}
-            <a href="https://www.linkedin.com/in/guillaume-monot/">
+            <a target="_blank" href="https://www.linkedin.com/in/guillaume-monot/">
               Guillaume Monot
             </a>
           </div>
