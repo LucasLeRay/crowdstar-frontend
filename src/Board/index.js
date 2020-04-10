@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, withRouter } from 'react-router-dom'
 import io from 'socket.io-client'
 import { PulseLoader } from 'react-spinners'
+import { shape, func } from 'prop-types'
 
 import apiRequest from '../commons/helpers/apiRequest'
 import Counter from './Counter'
@@ -26,7 +27,7 @@ async function getBoardInformation(name) {
   }
 }
 
-function Board() {
+function Board({ history }) {
   const { name } = useParams()
   const [board, setBoard] = useState(null)
   const [tier, setTier] = useState('NONE')
@@ -38,26 +39,30 @@ function Board() {
     let result
     const socket = io('https://api.crowdstar.xyz')
     const fetchData = async () => {
-      const boardInfos = await getBoardInformation(name)
-      result = boardInfos.result
-      socket.emit('register', {
-        name: result.name,
-        hashtag: result.hashtag,
-        winnerRate: result.winnerRate,
-        giveway: result.giveway,
-      })
-      socket.on('tweet', (data) => {
-        setTweets((state) => [data.tweet, ...state.slice(0, 9)])
-        setCounter(data.counter)
-      })
-      socket.on('winner', (data) => {
-        setWinner(data)
-        setTimeout(() => {
-          setWinner(null)
-        }, 8000)
-      })
-      setBoard(result)
-      setTier(result.tier)
+      try {
+        const boardInfos = await getBoardInformation(name)
+        result = boardInfos.result
+        socket.emit('register', {
+          name: result.name,
+          hashtag: result.hashtag,
+          winnerRate: result.winnerRate,
+          giveway: result.giveway,
+        })
+        socket.on('tweet', (data) => {
+          setTweets((state) => [data.tweet, ...state.slice(0, 9)])
+          setCounter(data.counter)
+        })
+        socket.on('winner', (data) => {
+          setWinner(data)
+          setTimeout(() => {
+            setWinner(null)
+          }, 8000)
+        })
+        setBoard(result)
+        setTier(result.tier)
+      } catch (err) {
+        history.push('/')
+      }
     }
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -120,4 +125,10 @@ function Board() {
   )
 }
 
-export default Board
+Board.propTypes = {
+  history: shape({
+    push: func,
+  }).isRequired,
+}
+
+export default withRouter(Board)

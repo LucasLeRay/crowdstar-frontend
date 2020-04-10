@@ -120,12 +120,20 @@ function Landing() {
             <span role="img" aria-label="heart">
               {' ❤️ '}
             </span>
-            by{' '}
-            <a target="_blank" href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/">
+            {'by  '}
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/"
+              rel="noopener noreferrer"
+            >
               Lucas Le Ray
-            </a>{' '}
-            &{' '}
-            <a target="_blank" href="https://www.linkedin.com/in/guillaume-monot/">
+            </a>
+            {' & '}
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/guillaume-monot/"
+              rel="noopener noreferrer"
+            >
               Guillaume Monot
             </a>
           </div>

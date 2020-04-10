@@ -32,21 +32,21 @@ function Step2({ prevStep, nextStep, color, setColor, setBanner }) {
     <div className={StepContainer}>
       <form onSubmit={handleSubmit}>
         <div className={StepBody}>
-            <span className={ColorInput}>
-              Choose your background color:
-              <span style={{ color: '#1da1f2' }}>
-                <input
-                  name="color"
-                  type="color"
-                  value={color}
-                  onChange={handleChange}
-                />
-              </span>
+          <span className={ColorInput}>
+            Choose your background color:
+            <span style={{ color: '#1da1f2' }}>
+              <input
+                name="color"
+                type="color"
+                value={color}
+                onChange={handleChange}
+              />
             </span>
-            <div className={UploadBannerWrapper}>
-              <span>Choose your banner:</span>
-              <FileInput name="banner" onChange={handleChange} />
-            </div>
+          </span>
+          <div className={UploadBannerWrapper}>
+            <span>Choose your banner:</span>
+            <FileInput name="banner" onChange={handleChange} />
+          </div>
         </div>
         <div className={ButtonWrapper}>
           <Button label="Previous" size="large" onClick={prevStep} />
