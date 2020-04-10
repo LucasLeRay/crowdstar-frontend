@@ -65,7 +65,7 @@ function Landing() {
             className={RoomInput}
             placeholder="crowdstar-0403"
             value={room}
-            onChange={e => setRoom(e.target.value)}
+            onChange={(e) => setRoom(e.target.value)}
           />
 
           <div className={ModalButton}>
@@ -120,7 +120,14 @@ function Landing() {
             <span role="img" aria-label="heart">
               {' ❤️ '}
             </span>
-            by Lucas Le Ray & Guillaume Monot
+            by{' '}
+            <a href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/">
+              Lucas Le Ray
+            </a>{' '}
+            &{' '}
+            <a href="https://www.linkedin.com/in/guillaume-monot/">
+              Guillaume Monot
+            </a>
           </div>
         </footer>
       )}

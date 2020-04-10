@@ -1,0 +1,63 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 540px;
+  height: 200px;
+  left: calc(50% - 270px);
+  top: calc(50% - 100px);
+  background-color: #fff;
+  padding: 32px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+}
+
+.Container:focus {
+  outline: 0px solid transparent;
+}
+
+.Container h1 {
+  margin: 0 0 32px 0;
+}
+
+.CardField {
+  margin-bottom: 15px;
+  background-color: var(--grey-color-2);
+  padding: 11px 16px;
+  border-radius: 10px;
+  line-height: 1.3333333;
+  border: none;
+}
+
+.ButtonWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ButtonWrapper button {
+  width: 240px;
+  border-radius: 10px;
+}
+
+.Checkout button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+}
+
+.ErrorWrapper {
+  display: flex;
+  justify-content: center;
+  color: var(--error-color);
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.LoadingWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
