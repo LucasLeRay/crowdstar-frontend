@@ -8,7 +8,10 @@ body {
   max-height: 100vh;
   --primary-color: #1da1f2;
   --text-color: #14171a;
+  --grey-color: #657786;
+  --grey-color-2: #e1e8ed;
   --bg-color: #e1e8ed;
+  --error-color: #eb1c26;
 }
 
 code {

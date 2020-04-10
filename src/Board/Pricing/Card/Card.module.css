@@ -1,0 +1,120 @@
+.Container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #fff;
+  width: 300px;
+  height: 460px;
+  border-radius: 10px;
+  margin: 0 40px;
+  padding: 32px;
+}
+
+.ImportantBorder {
+  border-style: solid;
+  border-radius: 0 0 10px 10px;
+  border-color: var(--text-color);
+  border-width: 8px;
+}
+
+.EarlyAccess {
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  border-style: solid;
+  border-radius: 10px 10px 0 0;
+  border-color: var(--text-color);
+  border-width: 8px;
+  font-size: 24px;
+  width: 100%;
+  color: #fff;
+  background-color: var(--text-color);
+  top: -46px;
+  left: -8px;
+  position: absolute;
+}
+
+.Container h2 {
+  font-size: 42px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.PriceWrapper {
+  display: flex;
+}
+
+.ActualPrice {
+  display: flex;
+  align-items: center;
+  font-size: 96px;
+  font-weight: 700;
+}
+
+.ActualPrice .DollarSign {
+  font-size: 42px;
+  margin-right: 5px;
+}
+
+.Discount {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--grey-color);
+  text-decoration: line-through;
+  margin-left: 36px;
+}
+
+.Discount .DollarSign {
+  font-size: 22px;
+}
+
+.AdvantagesWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Advantage {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 18px;
+}
+
+.Advantage svg {
+  width: 32px;
+  margin-right: 8px;
+}
+
+.ButtonWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ButtonWrapper button {
+  cursor: pointer;
+  width: 100%;
+  padding: 12px 42px;
+  font-size: 32px;
+  border-radius: 10px;
+  border-color: transparent;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+.ImportantButton {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.ButtonWrapper button:hover {
+  transform: scale(1.1);
+}
+
+.RegularButton {
+  background-color: var(--grey-color-2);
+  color: var(--text-color);
+}

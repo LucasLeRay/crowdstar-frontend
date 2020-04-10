@@ -6,6 +6,7 @@ import { PulseLoader } from 'react-spinners'
 import apiRequest from '../commons/helpers/apiRequest'
 import Counter from './Counter'
 import TweetList from './TweetList'
+import Pricing from './Pricing'
 import {
   Container,
   BannerWrapper,
@@ -28,6 +29,7 @@ async function getBoardInformation(name) {
 function Board() {
   const { name } = useParams()
   const [board, setBoard] = useState(null)
+  const [tier, setTier] = useState('NONE')
   const [tweets, setTweets] = useState([])
   const [counter, setCounter] = useState(0)
   const [winner, setWinner] = useState(null)
@@ -55,6 +57,7 @@ function Board() {
         }, 8000)
       })
       setBoard(result)
+      setTier(result.tier)
     }
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -67,38 +70,48 @@ function Board() {
           <img src={board.banner} alt={board.name} />
         </div>
       )}
-      <div className={BoardWrapper}>
-        {['EVERY', 'AT'].includes(board.giveway) && (
-          <Counter
-            className={board.banner ? ReduceCounter : ''}
-            current={counter}
-            rate={board.winnerRate}
-            repeat={board.giveway === 'EVERY'}
-          />
-        )}
-        {winner ? (
-          <div className={WinnerWrapper}>
-            <span>{`Congrats ${winner.screenName}, You won a gift! 🎉🎉🎉`}</span>
-            <Tweet
-              profilePicture={winner.profilePicture}
-              userName={winner.userName}
-              screenName={winner.screenName}
-              content={winner.content}
-              hashtag={board.hashtag}
-              media={winner.media}
-              key={winner.id}
-              color={board.color}
+      {['FREE', 'STANDARD', 'PREMIUM'].includes(tier) ? (
+        <div className={BoardWrapper}>
+          {['EVERY', 'AT'].includes(board.giveway) && (
+            <Counter
+              className={board.banner ? ReduceCounter : ''}
+              current={counter}
+              rate={board.winnerRate}
+              repeat={board.giveway === 'EVERY'}
             />
-          </div>
-        ) : (
-          <TweetList
-            tweets={tweets}
-            hashtag={board.hashtag}
-            color={board.color}
-            isGiveway={board.giveway !== 'NONE'}
-          />
-        )}
-      </div>
+          )}
+          {winner ? (
+            <div className={WinnerWrapper}>
+              {/* eslint-disable-next-line max-len */}
+              <span>{`Congrats ${winner.screenName}, You won a gift! 🎉🎉🎉`}</span>
+              <Tweet
+                profilePicture={winner.profilePicture}
+                userName={winner.userName}
+                screenName={winner.screenName}
+                content={winner.content}
+                hashtag={board.hashtag}
+                media={winner.media}
+                key={winner.id}
+                color={board.color}
+              />
+            </div>
+          ) : (
+            <TweetList
+              tweets={tweets}
+              hashtag={board.hashtag}
+              color={board.color}
+              isGiveway={board.giveway !== 'NONE'}
+            />
+          )}
+        </div>
+      ) : (
+        <Pricing
+          boardId={board.boardId}
+          name={board.name}
+          setTier={setTier}
+          email={board.email}
+        />
+      )}
     </div>
   ) : (
     <div className={LoadingWrapper}>
