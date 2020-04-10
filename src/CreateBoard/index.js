@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { shape, func } from 'prop-types'
 import { withRouter } from 'react-router-dom'
-import apiRequest from '../commons/helpers/apiRequest.js'
+import apiRequest from '../commons/helpers/apiRequest'
 import { Container, StepWrapper, BannerWrapper } from './CreateBoard.module.css'
 import Step1 from './Step1'
 import Step2 from './Step2'
