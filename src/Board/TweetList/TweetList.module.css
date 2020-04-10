@@ -4,6 +4,7 @@
 }
 
 .Placeholder {
+  text-align: center;
   color: #fff;
   font-size: 36px;
   width: 100%;
@@ -22,4 +23,40 @@
   margin-top: 50px;
   width: 500px;
   height: 400px;
+}
+
+@media (max-width: 1000px) {
+  .MarginGiveway {
+    margin-right: unset;
+  }
+}
+
+@media (max-width: 800px) {
+  .Container {
+    width: 100%;
+    padding: 30px 10px 0;
+  }
+}
+
+@media (max-width: 700px) {
+    
+    .Placeholder {
+        font-size: 30px;
+    }
+  
+    .Placeholder svg {
+    width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Placeholder svg {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Placeholder {
+    font-size: 25px;
+  }
 }

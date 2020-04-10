@@ -24,7 +24,7 @@ function Tweet({
   const convertedContent = content
     .replace(
       /(#[a-zA-Z0-9]*)/g,
-      text => `<span style="color:${color}">${text}</span>`,
+      (text) => `<span style="color:${color}">${text}</span>`,
     )
     .replace(/(http|https):\/\/[^\s]*/g, '')
   return (
@@ -38,6 +38,7 @@ function Tweet({
       </div>
       <p
         className={Content}
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: convertedContent }}
       />
       {!!media && (

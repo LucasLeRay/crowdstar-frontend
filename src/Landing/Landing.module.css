@@ -128,9 +128,12 @@
   left: 200px;
   right: 200px;
   bottom: 200px;
-
   height: 250px;
   background-color: #fff;
+}
+
+.ModalStyle:focus {
+  outline: 0px solid transparent;
 }
 
 .RoomInput input {
@@ -154,7 +157,7 @@
 a {
   text-decoration: none;
   font-weight: bold;
-  color: black
+  color: black;
 }
 
 @media (max-width: 1400px) {
