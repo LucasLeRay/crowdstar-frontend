@@ -141,3 +141,15 @@
   -webkit-animation-name: swing;
   animation-name: swing;
 }
+
+@media (max-height: 700px) {
+  .Container {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .Container {
+    display: none;
+  }
+}

@@ -118,3 +118,10 @@
   background-color: var(--grey-color-2);
   color: var(--text-color);
 }
+
+@media (max-width: 1400px) {
+  .Container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+}

@@ -46,7 +46,7 @@ function Landing() {
         <header className={Header}>
           <ul>
             <li>
-              <span onClick={openModal}>Join a Board</span>
+              <span onClick={openModal}>Join a Wall</span>
             </li>
           </ul>
         </header>
@@ -89,15 +89,15 @@ function Landing() {
 
       <div className={Body}>
         <div className={LeftPart}>
-          <h1>The Tweet Board that makes you famous.</h1>
+          <h1>The Tweet Wall that makes you famous.</h1>
           <p>Show the world the last tweets speaking of your awesome event!</p>
           <p>
-            Customize the board with your design and reward your Tweeters with
+            Customize the wall with your design and reward your Tweeters with
             gifts to encourage them!
           </p>
           <div className={ButtonWrapper}>
             <Link to="/new">
-              <Button size="large" active label="Create a Board" />
+              <Button size="large" active label="Create a Wall" />
             </Link>
             <p>(It&#39;s free!)</p>
           </div>
