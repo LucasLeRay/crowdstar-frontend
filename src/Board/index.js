@@ -16,6 +16,7 @@ import {
   BoardWrapper,
   LoadingWrapper,
   ReduceCounter,
+  Copyright,
 } from './Board.module.css'
 
 async function getBoardInformation(name) {
@@ -107,6 +108,9 @@ function Board({ history }) {
           setTier={setTier}
           email={board.email}
         />
+      )}
+      {['FREE', 'NONE'].includes(tier) && (
+        <div className={Copyright}>Powered by CrowdStar</div>
       )}
     </div>
   ) : (
