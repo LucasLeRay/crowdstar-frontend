@@ -17,20 +17,20 @@ function Step5({ name }) {
       <div className={StepBody}>
         <span className={Congrats}>
           Congrats!
-          <span role="img" aria-label="heart">
+          <span role="img" aria-label="party">
             {' 🎉🎉🎉'}
           </span>
         </span>
         <div className={Details}>
-          <span>Your board is setup!</span>
+          <span>Your wall is setup!</span>
           <span>
-            You will now receive an email with the id to access to your board.
+            You will now receive an email with the id to access to your wall.
           </span>
         </div>
       </div>
       <div className={ButtonWrapper}>
         <Link to={`/board/${name}`}>
-          <Button className={GoBoard} label="Go to your board" size="large" />
+          <Button className={GoBoard} label="Go to your wall" size="large" />
         </Link>
       </div>
     </div>

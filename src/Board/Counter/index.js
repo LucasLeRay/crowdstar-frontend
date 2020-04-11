@@ -22,8 +22,8 @@ function Counter({ current, rate, repeat, className }) {
   }
 
   return (
-    <div>
-      <div className={`${Container} ${className}`}>
+    <div className={className}>
+      <div className={Container}>
         <Gift className={GiftImage} alt="gift" />
         <span className={Glass}>
           <span className={Amount} style={styles.amount} />

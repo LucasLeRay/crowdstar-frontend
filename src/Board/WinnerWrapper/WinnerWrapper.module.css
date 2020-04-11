@@ -1,0 +1,16 @@
+.Container {
+  padding: 0 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container > span {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}

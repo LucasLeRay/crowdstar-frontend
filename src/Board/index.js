@@ -5,18 +5,18 @@ import { PulseLoader } from 'react-spinners'
 import { shape, func } from 'prop-types'
 
 import apiRequest from '../commons/helpers/apiRequest'
+import useWindowDimensions from '../commons/hooks/useWindowDimensions'
 import Counter from './Counter'
 import TweetList from './TweetList'
 import Pricing from './Pricing'
+import WinnerWrapper from './WinnerWrapper'
 import {
   Container,
   BannerWrapper,
   BoardWrapper,
   LoadingWrapper,
-  WinnerWrapper,
   ReduceCounter,
 } from './Board.module.css'
-import Tweet from './TweetList/Tweet'
 
 async function getBoardInformation(name) {
   try {
@@ -34,6 +34,7 @@ function Board({ history }) {
   const [tweets, setTweets] = useState([])
   const [counter, setCounter] = useState(0)
   const [winner, setWinner] = useState(null)
+  const { width } = useWindowDimensions()
 
   useEffect(() => {
     let result
@@ -75,7 +76,7 @@ function Board({ history }) {
           <img src={board.banner} alt={board.name} />
         </div>
       )}
-      {['FREE', 'STANDARD', 'PREMIUM'].includes(tier) ? (
+      {['FREE', 'STANDARD', 'PREMIUM'].includes(tier) || width < 1100 ? (
         <div className={BoardWrapper}>
           {['EVERY', 'AT'].includes(board.giveway) && (
             <Counter
@@ -86,20 +87,7 @@ function Board({ history }) {
             />
           )}
           {winner ? (
-            <div className={WinnerWrapper}>
-              {/* eslint-disable-next-line max-len */}
-              <span>{`Congrats ${winner.screenName}, You won a gift! 🎉🎉🎉`}</span>
-              <Tweet
-                profilePicture={winner.profilePicture}
-                userName={winner.userName}
-                screenName={winner.screenName}
-                content={winner.content}
-                hashtag={board.hashtag}
-                media={winner.media}
-                key={winner.id}
-                color={board.color}
-              />
-            </div>
+            <WinnerWrapper winner={winner} board={board} />
           ) : (
             <TweetList
               tweets={tweets}
