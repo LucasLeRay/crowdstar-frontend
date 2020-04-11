@@ -16,6 +16,7 @@ import {
   BoardWrapper,
   LoadingWrapper,
   ReduceCounter,
+  Copyright,
 } from './Board.module.css'
 
 async function getBoardInformation(name) {
@@ -48,6 +49,9 @@ function Board({ history }) {
           hashtag: result.hashtag,
           winnerRate: result.winnerRate,
           giveway: result.giveway,
+          tier: result.tier,
+          email: result.email,
+          name: result.name
         })
         socket.on('tweet', (data) => {
           setTweets((state) => [data.tweet, ...state.slice(0, 9)])
@@ -104,6 +108,9 @@ function Board({ history }) {
           setTier={setTier}
           email={board.email}
         />
+      )}
+      {['FREE', 'NONE'].includes(tier) && (
+        <div className={Copyright}>Powered by CrowdStar</div>
       )}
     </div>
   ) : (
