@@ -106,7 +106,9 @@ function Board({ history }) {
           email={board.email}
         />
       )}
-      <div className={Copyright}>Powered by CrowdStar</div>
+      {['FREE', 'NONE'].includes(tier) && (
+        <div className={Copyright}>Powered by CrowdStar</div>
+      )}
     </div>
   ) : (
     <div className={LoadingWrapper}>
