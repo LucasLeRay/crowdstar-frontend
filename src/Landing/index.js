@@ -126,7 +126,7 @@ function Landing() {
             {'by  '}
             <a
               target="_blank"
-              href="https://www.linkedin.com/in/lucas-le-ray-89a61a135/"
+              href="https://lucas-le-ray.com"
               rel="noopener noreferrer"
             >
               Lucas Le Ray
