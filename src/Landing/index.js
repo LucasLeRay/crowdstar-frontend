@@ -110,7 +110,7 @@ function Landing() {
             <img src={feedDemo} alt="demo" />
           </div>
           <div className={DemoDescription}>
-            x2.2 more visibility on average!
+            x4.2 more visibility on average!
           </div>
         </div>
       </div>
