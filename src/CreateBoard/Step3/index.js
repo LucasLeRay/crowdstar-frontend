@@ -61,6 +61,7 @@ function Step3({
                 onChange={(e) => {
                   if (e.target.checked) {
                     setGiveway('every')
+                    setWinnerRate(50)
                   }
                   setIsGiveway(e.target.checked)
                 }}
@@ -78,6 +79,7 @@ function Step3({
                     />
                     <Input
                       type="number"
+                      min={50}
                       className={GivewayInput}
                       value={winnerRate}
                       onChange={(e) => setWinnerRate(Number(e.target.value))}
@@ -87,7 +89,7 @@ function Step3({
                 </div>
                 <Range
                   value={winnerRate}
-                  min={10}
+                  min={50}
                   max={1000}
                   step={10}
                   onChange={(e) => setWinnerRate(Number(e.target.value))}
