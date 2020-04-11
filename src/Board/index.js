@@ -16,6 +16,7 @@ import {
   BoardWrapper,
   LoadingWrapper,
   ReduceCounter,
+  Copyright,
 } from './Board.module.css'
 
 async function getBoardInformation(name) {
@@ -105,6 +106,7 @@ function Board({ history }) {
           email={board.email}
         />
       )}
+      <div className={Copyright}>Powered by CrowdStar</div>
     </div>
   ) : (
     <div className={LoadingWrapper}>

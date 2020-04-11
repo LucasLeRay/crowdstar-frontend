@@ -302,8 +302,8 @@
   }
 
   .GivewayOption span {
-      margin-bottom: 10px;
-      margin-top: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .GivewaySelect {
@@ -314,6 +314,10 @@
   .GivewayInput {
     width: 65px;
     margin-right: 20px;
+  }
+
+  .StepBody {
+    margin: 20px 20px 40px;
   }
 }
 
@@ -379,7 +383,7 @@
   }
 
   .HashtagInput {
-      height: 70px;
+    height: 70px;
   }
 
   .HashtagInput input {

@@ -90,7 +90,10 @@ function Landing() {
       <div className={Body}>
         <div className={LeftPart}>
           <h1>The Tweet Wall that makes you famous.</h1>
-          <p>Show the world the last tweets speaking of your awesome event!</p>
+          <p>
+            Engage your audience by displaying the last tweets about your
+            awesome event!
+          </p>
           <p>
             Customize the wall with your design and reward your Tweeters with
             gifts to encourage them!
