@@ -75,6 +75,11 @@
   background-color: var(--primary-color-4);
   color: white;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.16);
+  transition: all 0.15s ease-in-out;
+}
+
+.ButtonWrapper button:hover {
+  transform: scale(1.05);
 }
 
 .ButtonWrapper a {
@@ -344,6 +349,10 @@
     margin-bottom: 32px;
   }
 
+  .RightPart {
+    align-items: center;
+  }
+
   .LeftPart p {
     width: 600px;
   }
@@ -458,8 +467,7 @@
   }
 
   .Footer {
-    height: 100px;
-    font-size: 12px;
+    display: none;
   }
 
   .ModalWrapper {
@@ -477,6 +485,7 @@
   .JoinWallInput {
     width: 300px;
   }
+
   .CloseButton button,
   .JoinButton button {
     width: 120px;
