@@ -1,0 +1,34 @@
+{
+  "tweets": [
+    {
+      "profilePicture": "/mock/nicolas.jpg",
+      "userName": "Nicolas",
+      "screenName": "@Nicolas09433974",
+      "content": "Any designers here? 👨‍🎨🎨 #HackathonMarseille2020"
+    },
+    {
+      "profilePicture": "/mock/lucas.jpg",
+      "userName": "Lucas Le Ray",
+      "screenName": "@Lucas_Le_Ray",
+      "content": "I’m a developer looking for a group! #HackathonMarseille2020"
+    },
+    {
+      "profilePicture": "/mock/guillaume.jpg",
+      "userName": "Guillaume Monot",
+      "screenName": "@guillaume_monot",
+      "content": "Oh your tweets are on the screen! #HackathonMarseille2020"
+    },
+    {
+      "profilePicture": "/mock/joseph.jpg",
+      "userName": "Joseph Mestrallet",
+      "screenName": "@JosephMestrall1",
+      "content": "I come to #HackathonMarseille2020 every year!"
+    },
+    {
+      "profilePicture": "/mock/mike.jpg",
+      "userName": "Mike",
+      "screenName": "@NilsCambreleng",
+      "content": "Prepare for the #HackathonMarseille2020 noobies 😎 "
+    }
+  ]
+}

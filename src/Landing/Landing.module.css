@@ -1,312 +1,485 @@
 .Container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: var(--primary-color);
 }
 
-.Container footer svg {
-  margin-bottom: -30px;
+.LogoWrapper {
+  position: absolute;
+  top: 20px;
+  left: 48px;
 }
 
-.Copyright {
-  width: 100%;
-  text-align: center;
-  padding-bottom: 5px;
-  background-color: #fff;
+.LogoWrapper svg {
+  width: 72px;
 }
 
-.Header ul {
-  width: 100%;
-  margin: 0 0 3em 0;
-  padding: 0;
-  list-style: none;
-}
-
-.Header li {
-  float: right;
-}
-
-.Header li span {
-  display: block;
-  padding: 16px 16px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 22px;
-  color: #fff;
-}
-
-.Header li span:hover {
-  cursor: pointer;
-}
-
-.Body {
+.Hero {
+  position: relative;
+  justify-content: space-between;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 48px 0 128px;
 }
 
 .LeftPart {
-  margin: 0 20px;
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
 }
 
-.RightPart {
-  text-align: center;
+.LeftPart h1,
+.LeftPart p {
+  margin: 0 0 36px;
+  color: var(--grey-color-5);
 }
 
 .LeftPart h1 {
-  margin: 0 0 28px 0;
-  font-size: 42px;
-  color: #fff;
+  line-height: 72px;
+  font-size: 72px;
 }
 
 .LeftPart p {
-  width: 600px;
-  font-size: 22px;
-  line-height: 30px;
-  margin: 0;
-  color: #fff;
+  font-size: 36px;
+  width: 700px;
+  font-weight: 200;
 }
 
-.Container > div {
+.Important {
+  color: var(--primary-color-4);
+  font-weight: 700;
+}
+
+.CTA {
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
 .ButtonWrapper {
-  width: 300px;
-  margin-top: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ButtonWrapper button {
-  height: 80px;
+  width: 280px;
+  height: 90px;
+  border-radius: 10px;
+  font-size: 48px;
   font-weight: 700;
-  font-size: 36px;
-  transition: all 0.15s ease-in-out;
-}
-
-.ButtonWrapper button:hover {
-  transform: scale(1.1);
-}
-
-.ButtonWrapper p {
-  color: #fff;
-  font-weight: bold;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  width: 300px;
+  background-color: var(--primary-color-4);
+  color: white;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.16);
 }
 
-.Demo,
-.Demo img {
-  width: 640px;
-  height: 360px;
+.ButtonWrapper a {
+  text-decoration: none;
 }
 
-.Demo {
-  border-radius: 18px;
-  padding: 8px;
-  background-color: #fff;
-}
-
-.Demo img {
-  border-radius: 16px;
-}
-
-.DemoDescription {
-  color: #88ffa3;
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: 28px;
-}
-
-.ModalStyle {
+.ButtonWrapper span {
+  font-size: 24px;
   position: absolute;
+  font-weight: 200;
+  bottom: -36px;
+  right: calc(50% - 41px);
+  color: var(--grey-color-5);
+}
+
+.Choice {
+  font-size: 36px;
+  font-weight: 200;
+  margin: 0 16px;
+  color: var(--grey-color-5);
+}
+
+.JoinWall {
+  cursor: pointer;
+  margin-top: 6px;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color-4);
+}
+
+.RightPart {
+  margin-top: 54px;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  height: fit-content;
+}
+
+.Fade:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 90%
+  );
+  width: 100%;
+  height: 12em;
+}
+
+.WaveWrapper,
+.WaveWrapper svg {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 2;
+}
+
+.Advantages {
+  position: relative;
+  background-color: var(--primary-color-1);
+  padding: 0 0 256px;
+  overflow: hidden;
+}
+
+.AdvantagesWrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px;
+}
+
+.AdvantagesWrapper > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 412px;
+  height: 412px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0px 24px rgba(0, 0, 0, 0.16);
+  background-color: white;
+}
+
+.AdvantagesWrapper > div > h2 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 16px;
+  color: var(--grey-color-4);
+}
+
+.AdvantagesWrapper > div > p {
+  text-align: center;
+  font-size: 28px;
+  margin: 12px 0 0;
+  color: var(--grey-color-3);
+}
+
+.Advantages .ButtonWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.Footer {
+  background-color: var(--primary-color-5);
+  height: 100px;
+  font-size: 22px;
+  width: 100%;
+  padding-top: 5px;
+  text-align: center;
+  color: white;
+}
+
+.Footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+.ModalWrapper {
+  z-index: 4;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
   padding: 40px;
-  top: 200px;
-  left: 200px;
-  right: 200px;
-  bottom: 200px;
+  top: calc(50% - 165px);
+  left: calc(50% - 340px);
+  width: 600px;
   height: 250px;
   background-color: #fff;
+  box-shadow: 0 0px 24px rgba(0, 0, 0, 0.16);
+  color: var(--grey-color-5);
 }
 
-.ModalStyle:focus {
+.ModalWrapper h2 {
+  font-size: 36px;
+  margin: 0 0 16px;
+}
+
+.ModalWrapper:focus {
   outline: 0px solid transparent;
 }
 
-.RoomInput input {
-  min-width: 350px;
-  font-size: 82px;
-  height: 110px;
-  font-weight: 700;
+.JoinWallInput {
+  width: 500px;
 }
 
-.RoomInput {
-  margin: 0 10px;
-  height: 110px;
+.JoinWallInput input {
+  font-size: 30px;
 }
 
-.ModalButton {
-  margin-top: 20px;
+.ModalButtons {
   display: flex;
-  justify-content: space-around;
+  margin-top: 20px;
 }
 
-a {
+.CloseButton button,
+.JoinButton button {
+  width: 180px;
+  margin: 0 30px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CloseButton button {
+  color: var(--primary-color-4);
+  background-color: white;
+}
+
+.JoinButton button {
+  background-color: var(--primary-color-4);
+  color: white;
+}
+
+.ModalButtons a {
   text-decoration: none;
-  font-weight: bold;
-  color: black;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
+  .Hero {
+    justify-content: space-around;
+    padding: 0 48px;
+  }
+
+  .LeftPart h1,
+  .LeftPart p {
+    margin: 0 0 24px;
+  }
+
   .LeftPart h1 {
-    margin: 0 0 28px 0;
-    font-size: 38px;
-    color: #fff;
+    line-height: 48px;
+    font-size: 48px;
   }
 
   .LeftPart p {
-    width: 90%;
-    font-size: 22px;
-    line-height: 30px;
-    color: #fff;
-  }
-
-  .ButtonWrapper p {
-    width: 100%;
+    font-size: 24px;
+    width: 400px;
   }
 
   .RightPart {
-    text-align: center;
+    margin-top: 48px;
   }
 
-  .Demo,
-  .Demo img {
-    width: 495px;
-    height: 250px;
+  .ButtonWrapper button {
+    width: 160px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .ButtonWrapper span {
+    font-size: 18px;
+    bottom: -26px;
+    right: calc(50% - 31px);
+  }
+
+  .Choice {
+    font-size: 24px;
+  }
+
+  .JoinWall {
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+
+  .AdvantagesWrapper {
+    margin: 60px 0;
+  }
+
+  .AdvantagesWrapper > div {
+    width: 320px;
+    height: 320px;
+    padding: 12px;
+  }
+
+  .AdvantagesWrapper > div > h2 {
+    font-size: 28px;
+  }
+
+  .AdvantagesWrapper > div > p {
+    font-size: 22px;
+    margin: 12px 0 0;
   }
 }
 
 @media (max-width: 1200px) {
-  .Container {
-    display: flex;
+  .Hero {
     flex-direction: column;
-    background-color: var(--primary-color);
-  }
-
-  .Container > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
   }
 
   .LeftPart {
-    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 32px;
   }
 
   .LeftPart p {
-    width: 90%;
-    margin: 0 auto;
+    width: 600px;
   }
 
-  .RightPart {
-    margin: 50px auto 0;
-    text-align: center;
+  .CTA {
+    justify-content: center;
   }
 
-  .ButtonWrapper {
-    width: 100%;
-    margin-top: 40px;
+  .AdvantagesWrapper {
+    flex-direction: column;
+    align-items: center;
+    margin: 80px;
   }
 
-  .Demo,
-  .Demo img {
-    width: 495px;
-    height: 250px;
-  }
-}
-
-@media (max-width: 900px) {
-  .ModalStyle {
-    left: 100px;
-    right: 100px;
-  }
-
-  .RoomInput input {
-    min-width: 350px;
-    font-size: 60px;
-    height: 110px;
-    font-weight: 700;
-  }
-}
-
-@media (max-width: 650px) {
-  .ModalStyle {
-    left: 50px;
-    right: 50px;
-  }
-
-  .RoomInput input {
-    min-width: 350px;
-    font-size: 35px;
-    height: 110px;
-    font-weight: 700;
-  }
-}
-
-@media (max-width: 600px) {
-  .Demo,
-  .Demo img {
-    width: 400px;
-    height: 225px;
-  }
-}
-
-@media (max-width: 500px) {
-  .ModalStyle {
+  .AdvantagesWrapper > div {
+    width: 412px;
+    height: 412px;
     padding: 20px;
-    left: 10px;
-    right: 10px;
+    margin-top: 20px;
   }
 
-  .RoomInput input {
-    min-width: 300px;
-    font-size: 35px;
-    height: 110px;
-    font-weight: 700;
+  .AdvantagesWrapper > div > h2 {
+    font-size: 36px;
+    margin: 0 0 16px;
+  }
+
+  .AdvantagesWrapper > div > p {
+    font-size: 28px;
+    margin: 12px 0 0;
+  }
+
+  .Advantages .ButtonWrapper button {
+    width: 360px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
+  .LogoWrapper {
+    display: none;
+  }
+
+  .LeftPart {
+    margin-top: 60px;
+    align-items: center;
+  }
+
   .LeftPart h1 {
-    font-size: 32px;
+    line-height: 26px;
+    font-size: 26px;
+  }
+
+  .LeftPart h1,
+  .LeftPart p {
+    margin: 0 0 18px;
   }
 
   .LeftPart p {
     font-size: 18px;
+    width: 320px;
+  }
+
+  .RightPart {
+    margin-top: 0;
+  }
+
+  .CTA {
+    flex-direction: column;
+  }
+
+  .ButtonWrapper {
+    margin: 12px 0 4px;
   }
 
   .ButtonWrapper button {
-    font-size: 32px;
+    height: 48px;
+    font-size: 26px;
   }
 
-  .RightPart {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .Choice {
+    font-size: 20px;
   }
-  .Demo,
-  .Demo img {
-    width: 350px;
-    height: 197px;
-  }
-}
 
-@media (max-height: 800px) {
-  .RightPart {
+  .JoinWall {
+    margin: 0 0 4px;
+    font-size: 18px;
+  }
+
+  .ButtonWrapper span {
     display: none;
+  }
+
+  .AdvantagesWrapper {
+    margin: 0 0 60px;
+  }
+
+  .AdvantagesWrapper > div {
+    width: 260px;
+    height: 260px;
+    padding: 12px;
+  }
+
+  .AdvantagesWrapper > div > h2 {
+    font-size: 24px;
+  }
+
+  .AdvantagesWrapper > div > p {
+    font-size: 18px;
+  }
+
+  .Advantages .ButtonWrapper button {
+    width: 300px;
+  }
+
+  .Footer {
+    height: 100px;
+    font-size: 12px;
+  }
+
+  .ModalWrapper {
+    padding: 22px;
+    top: calc(50% - 102px);
+    left: calc(50% - 182px);
+    width: 320px;
+    height: 160px;
+  }
+
+  .ModalWrapper h2 {
+    font-size: 20px;
+  }
+
+  .JoinWallInput {
+    width: 300px;
+  }
+  .CloseButton button,
+  .JoinButton button {
+    width: 120px;
+    font-size: 20px;
   }
 }

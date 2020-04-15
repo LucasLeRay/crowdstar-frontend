@@ -5,12 +5,22 @@ body {
     'Droid Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-height: 100vh;
-  --primary-color: #1da1f2;
-  --text-color: #14171a;
-  --grey-color: #657786;
-  --grey-color-2: #e1e8ed;
-  --bg-color: #e1e8ed;
+  --primary-color-1: #eff8ff;
+  --primary-color-2: #d7e9f7;
+  --primary-color-3: #72caff;
+  --primary-color-4: #1da1f2;
+  --primary-color-5: #186b9d;
+  --primary-color-6: #004c7b;
+  --secondary-color-1: #fdf6db;
+  --secondary-color-2: #fae9aa;
+  --secondary-color-3: #ffdb57;
+  --secondary-color-4: #fdcf51;
+  --secondary-color-5: #ffc02e;
+  --grey-color-1: #f8f9fa;
+  --grey-color-2: #abbac9;
+  --grey-color-3: #6b7988;
+  --grey-color-4: #3f4851;
+  --grey-color-5: #292f36;
   --error-color: #eb1c26;
 }
 

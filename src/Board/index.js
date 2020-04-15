@@ -51,7 +51,6 @@ function Board({ history }) {
           giveway: result.giveway,
           tier: result.tier,
           email: result.email,
-          name: result.name
         })
         socket.on('tweet', (data) => {
           setTweets((state) => [data.tweet, ...state.slice(0, 9)])
