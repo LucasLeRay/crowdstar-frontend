@@ -12,6 +12,7 @@ import { tweets } from './mock.json'
 import Button from '../commons/Components/Button'
 import Input from '../commons/Components/Input'
 import Tweet from './Tweet'
+import useWindowDimensions from '../commons/hooks/useWindowDimensions'
 import {
   Container,
   LogoWrapper,
@@ -40,9 +41,13 @@ function Landing() {
   const [isOpen, setIsOpen] = useState(false)
   const [wall, setWall] = useState('')
   const [mockTweets, setMockTweets] = useState([])
+  const { height } = useWindowDimensions()
 
   useEffect(() => {
-    if (mockTweets.length < tweets.length) {
+    if (
+      mockTweets.length < tweets.length &&
+      (height > 900 || mockTweets.length < 3)
+    ) {
       const interval = setInterval(() => {
         setMockTweets(tweets.slice(0, mockTweets.length + 1))
       }, 2000)
