@@ -1,0 +1,113 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  margin: 6px 0;
+  background-color: white;
+  padding: 12px;
+  border-radius: 10px;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.16);
+  width: 600px;
+}
+
+.User {
+  display: flex;
+  align-items: center;
+}
+
+.Names {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.ProfileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.UserName {
+  font-size: 13px;
+  color: var(--text-color);
+  margin: 0 0 5px 0;
+}
+
+.ScreenName {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 11px;
+  margin: 0;
+}
+
+.Content {
+  font-size: 20px;
+  margin: 15px 0 0 0;
+  white-space: pre-line;
+  color: var(--text-color);
+  overflow-wrap: break-word;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1600px) {
+  .Container {
+    width: 460px;
+  }
+
+  .Content {
+    font-size: 16px;
+    margin: 12px 0 0 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Container {
+    width: 600px;
+    text-align: left;
+  }
+
+  .Content {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .Container {
+    width: 100%;
+  }
+
+  .Content {
+    font-size: 18px;
+  }
+
+  .ProfileImage {
+    width: 32px;
+    height: 32px;
+  }
+}
