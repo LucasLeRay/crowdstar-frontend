@@ -1,7 +1,6 @@
 .Container {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-color);
 }
 
 .LogoWrapper {
@@ -278,6 +277,7 @@
 
   .LeftPart h1,
   .LeftPart p {
+    left: 0;
     margin: 0 0 24px;
   }
 
@@ -293,6 +293,7 @@
 
   .RightPart {
     margin-top: 48px;
+    min-width: 484px;
   }
 
   .ButtonWrapper button {
@@ -350,6 +351,7 @@
   }
 
   .RightPart {
+    min-width: 0px;
     align-items: center;
   }
 

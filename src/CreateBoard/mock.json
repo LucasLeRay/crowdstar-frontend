@@ -1,0 +1,22 @@
+{
+  "tweets": [
+    {
+      "profilePicture": "/mock/nicolas.jpg",
+      "userName": "Nicolas",
+      "screenName": "@Nicolas09433974",
+      "content": "Oh your tweets are on the screen! #Hackathon2020"
+    },
+    {
+      "profilePicture": "/mock/lucas.jpg",
+      "userName": "Lucas Le Ray",
+      "screenName": "@Lucas_Le_Ray",
+      "content": "Is Pieter Levels coming tonight? #Hackathon2020"
+    },
+    {
+      "profilePicture": "/mock/guillaume.jpg",
+      "userName": "Guillaume Monot",
+      "screenName": "@guillaume_monot",
+      "content": "I come to #Hackathon2020 every year!"
+    }
+  ]
+}

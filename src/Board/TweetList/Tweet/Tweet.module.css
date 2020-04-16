@@ -30,13 +30,13 @@
 
 .UserName {
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--grey-color-5);
   font-size: 22px;
   margin: 0 0 5px 0;
 }
 
 .ScreenName {
-  color: var(--text-color);
+  color: var(--grey-color-5);
   font-weight: 400;
   font-size: 18px;
   margin: 0;
@@ -46,7 +46,7 @@
   font-size: 40px;
   margin: 15px 0 0 0;
   white-space: pre-line;
-  color: var(--text-color);
+  color: var(--grey-color-5);
   overflow-wrap: break-word;
 }
 

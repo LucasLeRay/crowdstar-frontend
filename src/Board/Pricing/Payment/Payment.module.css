@@ -42,7 +42,7 @@
 }
 
 .Checkout button {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-4);
   color: white;
   font-weight: 700;
 }

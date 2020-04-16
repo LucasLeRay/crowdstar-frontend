@@ -6,8 +6,13 @@
 }
 
 .Container button {
-  width: 150px;
-  height: 52px;
+  width: 160px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.Container svg {
+  height: 20px;
 }
 
 .Container input[type='file'] {

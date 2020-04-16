@@ -2,20 +2,14 @@ import React from 'react'
 import { func, string } from 'prop-types'
 import {
   StepContainer,
-  ButtonWrapper,
-  StepBody,
+  Intro,
   UploadBannerWrapper,
+  FileWrapper,
   ColorInput,
 } from '../CreateBoard.module.css'
-import Button from '../../commons/Components/Button'
 import FileInput from '../../commons/Components/FileInput'
 
-function Step2({ prevStep, nextStep, color, setColor, setBanner }) {
-  function handleSubmit(e) {
-    e.preventDefault()
-    nextStep()
-  }
-
+function Step2({ color, setColor, setBanner }) {
   function handleChange(e) {
     const {
       target: { name, value, files },
@@ -30,36 +24,39 @@ function Step2({ prevStep, nextStep, color, setColor, setBanner }) {
 
   return (
     <div className={StepContainer}>
-      <form onSubmit={handleSubmit}>
-        <div className={StepBody}>
-          <span className={ColorInput}>
-            Choose your background color:
-            <span style={{ color: '#1da1f2' }}>
-              <input
-                name="color"
-                type="color"
-                value={color}
-                onChange={handleChange}
-              />
-            </span>
+      <div className={Intro}>
+        <h2>
+          Add your style!
+          <span role="img" aria-label="Artist">
+            {' 👨‍🎨'}
           </span>
-          <div className={UploadBannerWrapper}>
-            <span>Choose your banner:</span>
-            <FileInput name="banner" onChange={handleChange} />
-          </div>
-        </div>
-        <div className={ButtonWrapper}>
-          <Button label="Previous" size="large" onClick={prevStep} />
-          <Button label="Next" type="submit" size="large" />
-        </div>
-      </form>
+        </h2>
+        <p>Let speak the artist in you</p>
+      </div>
+      <div className={UploadBannerWrapper}>
+        <span>Choose your banner:</span>
+        <FileInput
+          className={FileWrapper}
+          name="banner"
+          onChange={handleChange}
+        />
+      </div>
+      <span className={ColorInput}>
+        Choose your background color:
+        <span style={{ color: '#1da1f2' }}>
+          <input
+            name="color"
+            type="color"
+            value={color}
+            onChange={handleChange}
+          />
+        </span>
+      </span>
     </div>
   )
 }
 
 Step2.propTypes = {
-  prevStep: func.isRequired,
-  nextStep: func.isRequired,
   color: string.isRequired,
   setColor: func.isRequired,
   setBanner: func.isRequired,

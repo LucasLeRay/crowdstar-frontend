@@ -2,20 +2,13 @@ import React from 'react'
 import { func, string } from 'prop-types'
 import {
   StepContainer,
-  ButtonWrapper,
-  StepBody,
+  Intro,
   HashtagWrapper,
   HashtagInput,
 } from '../CreateBoard.module.css'
-import Button from '../../commons/Components/Button'
 import Input from '../../commons/Components/Input'
 
-function Step1({ handleCancel, nextStep, hashtag, setHashtag }) {
-  function handleSubmit(e) {
-    e.preventDefault()
-    nextStep()
-  }
-
+function Step1({ hashtag, setHashtag }) {
   function handleChange(e) {
     const {
       target: { value },
@@ -25,44 +18,34 @@ function Step1({ handleCancel, nextStep, hashtag, setHashtag }) {
 
   return (
     <div className={StepContainer}>
-      <form onSubmit={handleSubmit}>
-        <div className={StepBody}>
-          <h2>What is your</h2>
-          <span className={HashtagWrapper}>
-            <span>#</span>
-            <Input
-              className={HashtagInput}
-              value={hashtag}
-              onChange={handleChange}
-              placeholder="hashtag"
-              style={{ width: hashtag.length * 55 }}
-            />
-            <span>?</span>
+      <div className={Intro}>
+        <h2>
+          Welcome on CrowdStar!
+          <span role="img" aria-label="Welcome">
+            {' 👋'}
           </span>
-        </div>
-        <div className={ButtonWrapper}>
-          <Button
-            colorBackground
-            label="Cancel"
-            size="large"
-            onClick={handleCancel}
-          />
-          <Button
-            disabled={!(/^[A-Za-z0-9]*$/.test(hashtag) && hashtag.length > 2)}
-            colorBackground
-            label="Next"
-            size="large"
-            type="submit"
-          />
-        </div>
-      </form>
+        </h2>
+        <p>We&#39;ll start by creating your wall</p>
+      </div>
+      <p>
+        What is the hashtag of your
+        <br />
+        (Awesome) event?
+      </p>
+      <div className={HashtagWrapper}>
+        <span>#</span>
+        <Input
+          className={HashtagInput}
+          value={hashtag}
+          onChange={handleChange}
+          placeholder="Hackathon2020"
+        />
+      </div>
     </div>
   )
 }
 
 Step1.propTypes = {
-  handleCancel: func.isRequired,
-  nextStep: func.isRequired,
   hashtag: string.isRequired,
   setHashtag: func.isRequired,
 }
