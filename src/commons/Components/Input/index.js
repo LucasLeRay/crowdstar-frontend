@@ -14,7 +14,7 @@ const theme = {
     },
     focus: {
       border: {
-        color: '#1da1f2',
+        color: 'transparent',
       },
     },
     colors: {

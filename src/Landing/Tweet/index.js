@@ -11,10 +11,10 @@ import {
   Content,
 } from './Tweet.module.css'
 
-function Tweet({ profilePicture, userName, screenName, content }) {
+function Tweet({ color, profilePicture, userName, screenName, content }) {
   const convertedContent = content.replace(
     /(#[a-zA-Z0-9]*)/g,
-    (text) => `<span style="color:#1da1f2">${text}</span>`,
+    (text) => `<span style="color:${color}">${text}</span>`,
   )
   return (
     <li className={Container}>
@@ -35,10 +35,15 @@ function Tweet({ profilePicture, userName, screenName, content }) {
 }
 
 Tweet.propTypes = {
+  color: string,
   profilePicture: string.isRequired,
   userName: string.isRequired,
   screenName: string.isRequired,
   content: string.isRequired,
+}
+
+Tweet.defaultProps = {
+  color: '#1da1f2',
 }
 
 export default Tweet

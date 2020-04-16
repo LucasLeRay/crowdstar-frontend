@@ -54,6 +54,7 @@ function Landing() {
       return () => clearInterval(interval)
     }
     return () => {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mockTweets])
 
   return (

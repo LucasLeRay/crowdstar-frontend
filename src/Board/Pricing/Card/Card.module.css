@@ -13,7 +13,7 @@
 .ImportantBorder {
   border-style: solid;
   border-radius: 0 0 10px 10px;
-  border-color: var(--text-color);
+  border-color: var(--grey-color-5);
   border-width: 8px;
 }
 
@@ -23,12 +23,12 @@
   font-weight: 700;
   border-style: solid;
   border-radius: 10px 10px 0 0;
-  border-color: var(--text-color);
+  border-color: var(--grey-color-5);
   border-width: 8px;
   font-size: 24px;
   width: 100%;
   color: #fff;
-  background-color: var(--text-color);
+  background-color: var(--grey-color-5);
   top: -46px;
   left: -8px;
   position: absolute;
@@ -36,7 +36,7 @@
 
 .Container h2 {
   font-size: 42px;
-  color: var(--text-color);
+  color: var(--grey-color-5);
   margin: 0;
 }
 
@@ -61,7 +61,7 @@
   align-items: center;
   font-weight: 700;
   font-size: 48px;
-  color: var(--grey-color);
+  color: var(--grey-color-3);
   text-decoration: line-through;
   margin-left: 36px;
 }
@@ -106,7 +106,7 @@
 }
 
 .ImportantButton {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-4);
   color: #fff;
 }
 
@@ -116,7 +116,7 @@
 
 .RegularButton {
   background-color: var(--grey-color-2);
-  color: var(--text-color);
+  color: var(--grey-color-5);
 }
 
 @media (max-width: 1400px) {
