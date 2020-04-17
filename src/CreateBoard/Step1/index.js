@@ -30,7 +30,7 @@ function Step1({ hashtag, setHashtag }) {
       <p>
         What is the hashtag of your
         <br />
-        (Awesome) event?
+        (awesome) event?
       </p>
       <div className={HashtagWrapper}>
         <span>#</span>
