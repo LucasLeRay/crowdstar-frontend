@@ -98,7 +98,7 @@ function Board({ history }) {
               hashtag={board.hashtag}
               color={board.color}
               isGiveway={board.giveway !== 'NONE'}
-              isAvailable={false}
+              isAvailable={board.isAvailable}
             />
           )}
         </div>
