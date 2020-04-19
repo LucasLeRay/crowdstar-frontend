@@ -51,6 +51,7 @@ function Board({ history }) {
           giveway: result.giveway,
           tier: result.tier,
           email: result.email,
+          isAvailable: result.isAvailable,
         })
         socket.on('tweet', (data) => {
           setTweets((state) => [data.tweet, ...state.slice(0, 9)])
@@ -97,6 +98,7 @@ function Board({ history }) {
               hashtag={board.hashtag}
               color={board.color}
               isGiveway={board.giveway !== 'NONE'}
+              isAvailable={false}
             />
           )}
         </div>

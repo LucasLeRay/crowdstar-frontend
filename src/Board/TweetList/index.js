@@ -5,7 +5,7 @@ import Tweet from './Tweet'
 import { Container, Placeholder, MarginGiveway } from './TweetList.module.css'
 import { ReactComponent as MobileMessages } from './mobileMessages.svg'
 
-function TweetList({ tweets, hashtag, color, isGiveway }) {
+function TweetList({ tweets, hashtag, color, isGiveway, isAvailable }) {
   return tweets.length ? (
     <div className={Container}>
       {tweets.map((tweet) => (
@@ -23,9 +23,10 @@ function TweetList({ tweets, hashtag, color, isGiveway }) {
     </div>
   ) : (
     <div className={`${Placeholder} ${isGiveway && MarginGiveway}`}>
-      <span>Be the first to tweet with</span>
+      { isAvailable ? (<span>Be the first to tweet with</span>) : <span>You no longer have access to</span>}
       {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
       <b>#{hashtag}</b>
+      { isAvailable ? (<span></span>) : <span>😕</span>}
       <MobileMessages fill={color} />
     </div>
   )
