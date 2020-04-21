@@ -29,6 +29,10 @@
   flex-direction: column;
 }
 
+.OverWaves {
+  z-index: 3;
+}
+
 .LeftPart h1,
 .LeftPart p {
   margin: 0 0 36px;
@@ -270,7 +274,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1610px) {
   .Hero {
     justify-content: space-around;
     padding: 0 48px;

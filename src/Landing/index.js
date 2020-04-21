@@ -18,6 +18,7 @@ import {
   LogoWrapper,
   Hero,
   LeftPart,
+  OverWaves,
   Important,
   CTA,
   ButtonWrapper,
@@ -63,7 +64,7 @@ function Landing() {
         <Logo />
       </div>
       <div className={Hero}>
-        <div className={LeftPart}>
+        <div className={`${LeftPart} ${isOpen ? '' : OverWaves}`}>
           <h1>
             The Tweet Wall
             <br />
