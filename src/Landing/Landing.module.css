@@ -153,6 +153,21 @@
   overflow: hidden;
 }
 
+.VideoWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 64px 0;
+}
+
+.VideoWrapper iframe {
+  width: 800px;
+  height: 450px;
+  border: none;
+}
+
 .AdvantagesWrapper {
   display: flex;
   justify-content: space-around;
@@ -502,5 +517,17 @@
   .JoinButton button {
     width: 120px;
     font-size: 20px;
+  }
+
+  .VideoWrapper iframe {
+    width: 480px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+  .VideoWrapper iframe {
+    width: 360px;
+    height: 180px;
   }
 }

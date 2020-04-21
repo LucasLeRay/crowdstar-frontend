@@ -28,6 +28,7 @@ import {
   Fade,
   WaveWrapper,
   Advantages,
+  VideoWrapper,
   AdvantagesWrapper,
   Footer,
   ModalWrapper,
@@ -111,6 +112,13 @@ function Landing() {
         )}
       </div>
       <div className={Advantages}>
+        <div className={VideoWrapper}>
+          <iframe
+            src="https://player.vimeo.com/video/410078994"
+            title="Demo"
+            allowFullScreen
+          />
+        </div>
         <div className={AdvantagesWrapper}>
           <div>
             <h2>Become famous</h2>
