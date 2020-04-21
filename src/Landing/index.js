@@ -18,6 +18,7 @@ import {
   LogoWrapper,
   Hero,
   LeftPart,
+  OverWaves,
   Important,
   CTA,
   ButtonWrapper,
@@ -27,6 +28,7 @@ import {
   Fade,
   WaveWrapper,
   Advantages,
+  VideoWrapper,
   AdvantagesWrapper,
   Footer,
   ModalWrapper,
@@ -63,11 +65,11 @@ function Landing() {
         <Logo />
       </div>
       <div className={Hero}>
-        <div className={LeftPart}>
+        <div className={`${LeftPart} ${isOpen ? '' : OverWaves}`}>
           <h1>
-            The Tweet Wall
+            Showcase & reward
             <br />
-            that makes you famous
+            tweets of your audience
           </h1>
           <p>
             With
@@ -110,6 +112,13 @@ function Landing() {
         )}
       </div>
       <div className={Advantages}>
+        <div className={VideoWrapper}>
+          <iframe
+            src="https://player.vimeo.com/video/410078994"
+            title="Demo"
+            allowFullScreen
+          />
+        </div>
         <div className={AdvantagesWrapper}>
           <div>
             <h2>Become famous</h2>
@@ -174,11 +183,13 @@ function Landing() {
         className={ModalWrapper}
         isOpen={isOpen}
         onRequestClose={() => {
+          setWall('')
           setIsOpen(false)
         }}
         contentLabel="Join Wall"
       >
-        <h2>What is the name of your wall?</h2>
+        <h2>What is the id of your wall?</h2>
+        <p>We sent it to you by email</p>
 
         <Input
           className={JoinWallInput}
@@ -192,7 +203,10 @@ function Landing() {
             className={CloseButton}
             label="Close"
             size="large"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setWall('')
+              setIsOpen(false)
+            }}
           />
           <Link to={`/board/${wall}`}>
             <Button

@@ -29,6 +29,10 @@
   flex-direction: column;
 }
 
+.OverWaves {
+  z-index: 3;
+}
+
 .LeftPart h1,
 .LeftPart p {
   margin: 0 0 36px;
@@ -149,6 +153,21 @@
   overflow: hidden;
 }
 
+.VideoWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 64px 0;
+}
+
+.VideoWrapper iframe {
+  width: 800px;
+  height: 450px;
+  border: none;
+}
+
 .AdvantagesWrapper {
   display: flex;
   justify-content: space-around;
@@ -224,7 +243,12 @@
 
 .ModalWrapper h2 {
   font-size: 36px;
-  margin: 0 0 16px;
+  margin: 0 0 8px;
+}
+
+.ModalWrapper p {
+  font-size: 18px;
+  margin: 0 0 32px;
 }
 
 .ModalWrapper:focus {
@@ -270,7 +294,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1610px) {
   .Hero {
     justify-content: space-around;
     padding: 0 48px;
@@ -475,10 +499,10 @@
 
   .ModalWrapper {
     padding: 22px;
-    top: calc(50% - 102px);
+    top: calc(50% - 132px);
     left: calc(50% - 182px);
     width: 320px;
-    height: 160px;
+    height: 220px;
   }
 
   .ModalWrapper h2 {
@@ -493,5 +517,17 @@
   .JoinButton button {
     width: 120px;
     font-size: 20px;
+  }
+
+  .VideoWrapper iframe {
+    width: 480px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+  .VideoWrapper iframe {
+    width: 360px;
+    height: 180px;
   }
 }
