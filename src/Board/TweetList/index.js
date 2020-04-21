@@ -23,10 +23,14 @@ function TweetList({ tweets, hashtag, color, isGiveway, isAvailable }) {
     </div>
   ) : (
     <div className={`${Placeholder} ${isGiveway && MarginGiveway}`}>
-      { isAvailable ? (<span>Be the first to tweet with</span>) : <span>You no longer have access to</span>}
+      {isAvailable ? (
+        <span>Be the first to tweet with</span>
+      ) : (
+        <span>You no longer have access to</span>
+      )}
       {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
       <b>#{hashtag}</b>
-      { isAvailable ? (<span></span>) : <span>😕</span>}
+      {isAvailable ? '' : <span>😕</span>}
       <MobileMessages fill={color} />
     </div>
   )
@@ -46,10 +50,12 @@ TweetList.propTypes = {
   color: string.isRequired,
   hashtag: string.isRequired,
   isGiveway: bool,
+  isAvailable: bool,
 }
 
 TweetList.defaultProps = {
   isGiveway: false,
+  isAvailable: true,
 }
 
 export default TweetList
