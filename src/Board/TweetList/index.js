@@ -30,7 +30,13 @@ function TweetList({ tweets, hashtag, color, isGiveway, isAvailable }) {
       )}
       {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
       <b>#{hashtag}</b>
-      {isAvailable ? '' : <span>😕</span>}
+      {isAvailable ? (
+        ''
+      ) : (
+        <span role="img" aria-label="fail">
+          😕
+        </span>
+      )}
       <MobileMessages fill={color} />
     </div>
   )
