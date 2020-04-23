@@ -103,12 +103,7 @@ function Board({ history }) {
           )}
         </div>
       ) : (
-        <Pricing
-          boardId={board.boardId}
-          name={board.name}
-          setTier={setTier}
-          email={board.email}
-        />
+        <Pricing name={board.name} setTier={setTier} email={board.email} />
       )}
       {['FREE', 'NONE'].includes(tier) && (
         <div className={Copyright}>Powered by CrowdStar</div>
