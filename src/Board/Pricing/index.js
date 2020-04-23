@@ -1,60 +1,43 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { string, func } from 'prop-types'
-import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 
 import config from '../../commons/helpers/config'
 import { Container, CardsWrapper, Disclaimer } from './Pricing.module.css'
 import Card from './Card'
-import Payment from './Payment'
 import apiRequest from '../../commons/helpers/apiRequest'
 
-function Pricing({ boardId, name, setTier, email }) {
-  const [selected, setSelected] = useState('')
-  const [stripe, setStripe] = useState(null)
+const stripePromise = loadStripe(config.ProdStripeKey)
 
-  useEffect(() => {
-    setStripe(loadStripe(config.ProdStripeKey))
-  }, [])
-
-  async function chooseTier(tier, id) {
-    try {
+function Pricing({ name, setTier }) {
+  async function selectTier(tier) {
+    if (tier === 'FREE') {
       const board = await apiRequest(
         {
-          source: id,
-          boardId,
           name,
           tier,
-          email,
         },
         'POST',
         'billing',
       )
       setTier(board.Attributes.tier)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  async function selectTier(tier) {
-    if (tier === 'FREE') {
-      chooseTier(tier)
     } else {
-      setSelected(tier)
+      const { id } = await apiRequest(
+        {
+          name,
+        },
+        'POST',
+        `billing/session/${tier}`,
+      )
+      const stripe = await stripePromise
+      await stripe.redirectToCheckout({
+        sessionId: id,
+      })
     }
   }
 
   return (
     <div className={Container}>
-      {!!selected.length && (
-        <Elements stripe={stripe}>
-          <Payment
-            tier={selected}
-            chooseTier={chooseTier}
-            setSelected={setSelected}
-          />
-        </Elements>
-      )}
       <div className={CardsWrapper}>
         <Card
           name="Free"
@@ -102,10 +85,8 @@ function Pricing({ boardId, name, setTier, email }) {
 }
 
 Pricing.propTypes = {
-  boardId: string.isRequired,
   name: string.isRequired,
   setTier: func.isRequired,
-  email: string.isRequired,
 }
 
 export default Pricing
