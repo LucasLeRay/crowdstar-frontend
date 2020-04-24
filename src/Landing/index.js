@@ -114,7 +114,7 @@ function Landing() {
       <div className={Advantages}>
         <div className={VideoWrapper}>
           <iframe
-            src="https://player.vimeo.com/video/410078994"
+            src="https://player.vimeo.com/video/411546697"
             title="Demo"
             allowFullScreen
           />
